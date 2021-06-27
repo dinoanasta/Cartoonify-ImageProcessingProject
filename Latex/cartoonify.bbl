@@ -1,0 +1,19 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{How}{a}]{Howtopix43:online}
+{\em How to pixelate image using OpenCV in Python? - Stack Overflow}.
+\newblock
+  \url{https://stackoverflow.com/questions/55508615/how-to-pixelate-image-using-opencv-in-python}.
+\newblock (Accessed on 06/24/2021).
+
+
+\bibitem[\protect\citeauthoryear{How}{b}]{Howtopix16:online}
+{\em How to pixelate image using OpenCV in Python? - Stack Overflow}.
+
+
+\bibitem[\protect\citeauthoryear{Russell}{}]{russell}
+Jeffery Russell.
+\newblock {\em Creating Pixel Art With Open CV}.
+
+
+\end{thebibliography}

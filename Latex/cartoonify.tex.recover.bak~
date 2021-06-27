@@ -1,0 +1,509 @@
+\documentclass[a4paper,twoside,12pt]{report}
+% Dino Anastasopoulos, 2021
+
+% Include Packages
+%\usepackage[a4paper,inner=3.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}  % Set page margins
+\usepackage{fullpage}
+\usepackage{float}                  % Allows 'Here and Only Here' [H] for Floats
+\usepackage{url}                    % \url{} command
+\usepackage{charter}                  % Set font to Times
+\usepackage{graphicx}               % \includegraphics
+%\usepackage{subfigure}              % Allow subfigures
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{parskip}
+\usepackage[all]{nowidow}
+\setnoclub[2]
+\setnowidow[2]
+
+% Referencing
+% Provides \Vref and \vref to indicate where a reference is.
+\usepackage{varioref} 
+% Hyperlinks references
+\usepackage[bookmarks=true,bookmarksopen=true]{hyperref} 
+% Provides \Cref, \cref, \Vref, \vref to include the type of reference: fig/eqn/tbl
+\usepackage{cleveref} 
+\usepackage{pgfgantt}
+
+% Setup Hyperref
+\hypersetup{
+  colorlinks   = true,              %Colours links instead of ugly boxes
+  urlcolor     = blue,              %Colour for external hyperlinks
+  linkcolor    = blue,              %Colour of internal links
+  citecolor    = blue                %Colour of citations
+}
+% Names for Clever Ref
+\crefname{table}{table}{tables}
+\Crefname{table}{Table}{Tables}
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}
+
+% Wits Citation Style
+\usepackage{natbib} \input{natbib-add}
+\bibliographystyle{named-wits}
+\bibpunct{[}{]}{;}{a}{}{}  % to get correct punctuation for bibliography
+\setlength{\skip\footins}{1.5cm}
+\newcommand{\citets}[1]{\citeauthor{#1}'s \citeyearpar{#1}}
+\renewcommand\bibname{References}  
+
+\pagestyle{headings}
+
+\pagestyle{plain}
+\pagenumbering{roman}
+
+\renewenvironment{abstract}{\ \vfill\begin{center}\textbf{Abstract}\end{center}\addcontentsline{toc}{section}{Abstract}}{\vfill\vfill\newpage}
+\newenvironment{declaration}{\ \vfill\begin{center}\textbf{Declaration}\end{center}\addcontentsline{toc}{section}{Declaration}}{\vfill\vfill\newpage}
+\newenvironment{acknowledgements}{\ \vfill\begin{center}\textbf{Acknowledgements}\end{center}\addcontentsline{toc}{section}{Acknowledgements}}{\vfill\vfill\newpage}
+
+\begin{document}
+\onecolumn
+\thispagestyle{empty}
+
+\setcounter{page}{0}
+\addcontentsline{toc}{chapter}{Preface}
+
+\begin{center}
+  \vfill
+ 	{
+	\huge \bf \textsc{AI assisted creativity: \\The auto-generation of cartoon characters using Generative Adversarial Networks}\\
+	\large School of Computer Science \& Applied Mathematics\\
+	\large University of the Witwatersrand\\[20pt]
+	\normalsize
+	Dino Anastasopoulos\\
+	Supervised by Dr Richard Klein\\[10pt]
+	\today
+	}
+
+  \vfill
+  \vfill
+  \includegraphics[width=1.5cm]{images/wits}
+  \vspace{10pt}\\
+  \small{A proposal submitted to the Faculty of Science, University of the Witwatersrand, Johannesburg,
+in partial fulfilment of the requirements for the degree of Bachelor of Science with Honours}\\
+\end{center}
+
+\vfill
+\newpage
+
+\pagestyle{plain}
+\setcounter{page}{1}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\phantomsection
+\begin{abstract}
+Cartoons are complex in a creative sense, but they are technically simple and contain very little detail. It takes a lot of time, thought and experimentation to come up with something that looks good and tells a story, yet visually cartoons are made up of oversimplified features, and well defined shapes and lines, in comparison to other visual media such as photographs of human faces and cats, and even anime characters. The colours in cartoons are generally flat and consistent besides for some variation when adding shadows and highlights, which even then are simple. This can be observed in Figures \ref{Raptor} and \ref{CartoonSetSamples}.
+
+Generative Adversarial Networks (GANs), specifically as outlined in \citet{karras2019_stylebasedgenerator}, show promising results in the synthesis of images. However, most of the research that exists has been done using datasets of either complex images (human faces, cats, cars) or simple images (handwritten digits, house numbers), but cartoons, which fall in between these, have been ignored.
+
+Using GANs, the aim of this project is to determine the ability of computers in generating cartoon characters by learning the style and content representation of many training examples. 
+
+\begin{figure}[h]
+	\caption{This cartoon is a personal artwork.}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/Raptor.png}
+	\label{Raptor}
+\end{figure}
+\end{abstract}
+
+\phantomsection
+\begin{declaration}
+
+	\vspace{0.5cm}
+	\noindent I, Dino Anastasopoulos, declare that this proposal is my own, unaided work. It is being submitted for the degree of Honors at the University of the Witwatersrand. It has not been submitted for any degree or examination at any other university.
+	
+	\par\vspace{2cm}
+	\begin{flushright}
+		\includegraphics[width=30mm]{images/signature3.png}\par 
+		Dino Anastasopoulos\par\vspace{0.1cm}
+		\today
+	\end{flushright}
+\end{declaration}
+
+\phantomsection
+\begin{acknowledgements}
+	\vspace{0.5cm}
+	\noindent{I would like to thank my supervisor, Dr Richard Klein, for guiding and helping me throughout this project.}
+\end{acknowledgements}
+
+\phantomsection
+\addcontentsline{toc}{section}{Table of Contents}
+\tableofcontents
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+%\phantomsection
+%\addcontentsline{toc}{section}{List of Tables}
+%\listoftables
+%\newpage
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+Generative models, particularly Generative Adversarial Networks (GANs), have been researched extensively, with many proposed variations of network architectures, loss functions, mechanisms of dealing with the latent space, data types, and much more, along with applications for several problem types such as image synthesis, and super-resolution. Closely related to GANs, we have the problems of style transfer and texture synthesis, which involve the algorithmic representation of style and content within an image. The following section, Literature Review, will summarize these findings and ideas.
+
+\section{Literature Review}
+
+\subsection{GANS}
+A Generative Adversarial Network (GAN) is a generative model which takes on the form of a two player min-max game, using a generator network $\mathcal{G}$, and a discriminator network  $\mathcal{D}$. GANs generalize to many different types of data, but we will simply be referring to them in the context of images. \\\\
+
+$\mathcal{G}$ is a mapping from the latent space (representation space) to the actual space of the images:
+\begin{equation}
+	\mathcal{G}:  \mathcal{G}(\mathbf{z}) \rightarrow R^{|x|}
+\end{equation} 
+where $\mathbf{z} \in R^{|z|}$ is a latent space sample, $\mathbf{x} \in R^{|x|}$ is an image and $|x|$ is the dimension of the image.\\\\
+
+$\mathcal{D}$ is a mapping from the image space to a scalar value(probability that the image is real):
+\begin{equation}
+	\mathcal{D}: \mathcal{D}(\mathbf{x}) \rightarrow(0,1)
+\end{equation}
+where a value of 1 classifies the image as real, and a value of 0 classifies the image as fake (synthesized by $\mathcal{G}$).\\\\
+The structure and architecture of a baseline GAN can be seen in Figure \ref{GAN}.
+
+
+\begin{figure}[h]
+	\caption{High level diagram of a Generative Adversarial Network.}
+	\centering
+	\includegraphics[width=1\textwidth]{images/GAN_Example.png}
+	\label{GAN}
+\end{figure}
+
+\subsubsection{Training}
+$\mathcal{G}$ trains to synthesize images that match the distribution of the real images, while  $\mathcal{D}$ trains to distinguish the synthesized images from the real images.
+$\mathcal{G}$ cannot "see" the real images, and learns through interaction with $\mathcal{D}$. On the other hand $\mathcal{D}$ has access to both the real and synthesized images, and needs to classify them correctly. Since  $\mathcal{D}$ receives both real and synthetic images, we can determine its error based on whether or not it correctly classifies the image.\\
+We train the GAN by solving \\
+\begin{equation}
+	\max _{\mathcal{D}} \min _{\mathcal{G}} V(\mathcal{G}, \mathcal{D}),
+\end{equation}
+where 
+\begin{equation}
+	V(\mathcal{G}, \mathcal{D})=\mathbb{E}_{p_{\operatorname{data}}(\mathbf{x})} \log \mathcal{D}(\mathbf{x})+\mathbb{E}_{p_{\mathrm{g}}(\mathbf{x})} \log (1-\mathcal{D}(\mathbf{x}))
+\end{equation}
+$\mathcal{D}$ is said to be optimal when it correctly classifies all images. When this is achieved, the discriminator network can be frozen and we can then train $\mathcal{G}$ further to lower $\mathcal{D}$'s accuracy.\\ 
+$\mathcal{G}$ reaches optimality when its distribution accurately matches that of the real data, $p_{g}(\mathbf{x})=p_{\text {data }}(\mathbf{x})$, which, in other words, means that the optimal $\mathcal{D}$ would predict 0.5 for all images.\\
+Each $\mathcal{G}$ has a corresponding unique optimal $\mathcal{D}$, where $\mathcal{D}^{*}(\mathbf{x})=p_{\text {data }}(\mathbf{x}) /\left(p_{\text {data }}(\mathbf{x})+p_{g}(\mathbf{x})\right)$ \citep{goodfellow2014_generativeadversarialnets}.\\\\
+Since the parameters of one network are updated while the others remains fixed, the objective functions of the generator and discriminator are codependent on one another’s weights.
+The generator and discriminator are both trained using simple back-propagation, and additionally drop-out, algorithms. $\mathcal{G}$ then generates new samples by forward propagating random noise through the MLP. 
+
+\subsubsection{Problems and improvements}
+\cite{goodfellow2014_generativeadversarialnets} show that updating the generator network based on a non optimal discriminator can be inaccurate and a waste of computation.
+\paragraph{Training Instability}
+Instability in training is often caused by saddle points in the data. One trick commonly used to avoid this is batch normalization \citep{ioffe2015_batch}.
+\paragraph{Mode Collapse}
+In some cases, $\mathcal{G}$ collapses and only produces a small group of very similar images, or just one image in the worst case.\\
+A solution to this is the introduction of mini-batch discrimination, which works by adding an extra feature to the discriminator to encode the distance between samples in a batch. This will give $\mathcal{D}$ the ability to detect when $\mathcal{G}$ is producing similar images.
+
+\subsubsection{Architectures}
+Both $\mathcal{G}$ and $\mathcal{D}$ are generally built as Multi-Layer Perceptrons (MLP), although several different approaches have been studied.
+\paragraph{Fully Connected GANs}
+GANs originally constructed both $\mathcal{G}$ and $\mathcal{D}$ as fully connected neural networks. This was tested on datasets such as MNIST(dataset of handwritten digits) and TFD(Toronto Face Dataset), which are relatively simple.
+\paragraph{Convolutional GANs}
+\citet{radford2015_unsupervised_DCGAN} introduced the DCGAN(Deep Convolutional GAN), which can be used for $\mathcal{G}$ and $\mathcal{D}$. Employing this network architecture allows the training algorithm to learn spatial up/down-sampling operators by using strided, or fractionally strided, convolutions. This handles the change in the sampling locations and rates which is essential  in mapping from the image space to the discriminator, or to the intermediate latent space.
+\paragraph{Conditional GANs}
+By adding an extra input $\boldsymbol{c}$ to both $\mathcal{G}$ and $\mathcal{D}$, we obtain a generative model that is conditional \citep{goodfellow2014_generativeadversarialnets},
+\begin{equation}
+	p(\boldsymbol{x} \mid \boldsymbol{c})
+\end{equation}
+This type of network architecture develops better representations for multi-modal data.\\
+Conditional adversarial networks work well in image-to-image translation tasks, such as the generation of maps from aerial scans, and the colourization of gray-scale images.
+\paragraph{GANs with inference models}
+Adversarially Learned Inference \citep{dumoulin2016_ALI}, and Bi-directional GANs \citep{donahue2016_BiGAN} introduce an inference network where $\mathcal{D}$ receives pairs of ($\boldsymbol{z'}$,$\boldsymbol{x}$) and ($\boldsymbol{z}$,$\boldsymbol{x'}$) tuples, where $\boldsymbol{z}$ is the input noise to $\mathcal{G}$, $\boldsymbol{x'}$ is a synthetic data sample, $\boldsymbol{z'}$ is a latent space encoding of a real data sample and $\boldsymbol{x}$ is sample of real data. $\mathcal{D}$ needs to determine which tuple is genuine (i.e. real image and its latent space encoding), and which is synthetic (i.e. fake image and its corresponding noise input to $\mathcal{G}$).\\
+$\mathcal{G}$, in the case of ALI/BiGAN models, consists of two networks which are jointly trained: an encoder(inference network) and a decoder.
+
+\paragraph{Adversarial Auto-encoders}
+Adversarial auto-encoders consist of an encoder and a decoder, which learn a mapping from the image space to the latent space and back to the image space, respectively.
+
+\subsubsection{Applications}
+\paragraph{Classification and Regression}
+\citet{dumoulin2016_ALI} have achieved remarkable classification results by incorporating label information while training the network.\\
+GANs are often utilized in synthesizing more data to train machine learning models when there is limited data available.	
+\paragraph{Image Synthesis}
+\citet{denton2015_LAPGAN} introduced the LAPGAN model, which works by incorporating convolutional networks into a Laplacian pyramid framework. It generates images layer-by-layer, starting with the coarse details(shapes, objects, forms) and adding the finer details (hair, freckles).
+\paragraph{Super-resolution}
+This involves the generation of a high resolution image from a low resolution image. The trained model has the ability to infer realistic details by up-sampling.
+
+\subsubsection{Latent Space}
+The input data first needs to be mapped to a latent representation space with a smaller dimension than the actual data space. This operation results in the discovery of interesting structure in the data since it needs to be represented efficiently.\\
+All vanilla GANs have a generator that maps the data from the latent space to the actual data space, but only some architectures have an additional encoder that performs the inverse mapping from the data space to the latent space.
+
+\subsection{Style Transfer}
+Style transfer is a problem of texture synthesis which works by capturing a statistical relationship between the pixels of an image in which we aim to transfer the style from one image(an artwork) to another(a photograph) while preserving the content representation of the photograph at a high level. 
+Specifically, this entails the generation of a new image that matches the style of the artwork and the content of the photograph, simultaneously.
+Previously, most texture transfer algorithms (many non-parametric) did not use the high level features of the content image, but used only the low level features.
+
+\subsubsection{Style vs Content}
+In the wonderful world of art, a pastiche is defined as an artwork that imitates the style of another. The separation of style and content is vague, although generally an images style is characterized by the brush strokes, colour palette, recurring patterns, textures, and certain dominant forms and shapes, and an images content is characterized by the objects, shapes and forms at a high level, and their arrangement within the image. Style is the "how" of an artwork, and content is the "what".\\
+Although it is not possible to completely disentangle content and style within an image, it is possible to manipulate them independently.
+
+\subsubsection{CNNs}
+\citet{gatys2016_StyTrans_CNNs} show how the feature representations, as learned by convolutional neural networks (CNNs), can be used to independently process and transform the style and content of images. \\
+In order to perform style transfer, we start with a white noise image and minimize the distance of its feature representations from the style representation of the artwork as defined on several layers of the CNN, and the content representation of the photograph from one layer, as seen in figure \ref{StyleTransfer} .\\
+
+We minimise the loss function
+\begin{equation}
+	\mathcal{L}_{\text {total }}(\vec{p}, \vec{a}, \vec{x})=\alpha \mathcal{L}_{\text {content }}(\vec{p}, \vec{x})+\beta \mathcal{L}_{\text {style }}(\vec{a}, \vec{x})
+\end{equation}
+where $\alpha$ and $\beta$ are the weights for style and content reconstruction. A stronger weighting of style will result in an image that matches the artworks texture, whereas a stronger weighting of content will result in an image that clearly depicts the semantic content of the photograph, but disregards the artworks style.\\\\
+The use of a VGG network proved successful when trained on localisation and object recognition. It was also determined that average pooling works better than max pooling in the case of image synthesis \citep{simonyan2014_VGG}.\\\\
+When initializing the gradient descent of the CNN with random white noise, an arbitrary number of new images can be generated. However, when initializing it using either the style or content image, it leads to the same output. 
+
+\begin{figure}[h]
+	\caption{Style Transfer. \citep{gatys2016_StyTrans_CNNs}}
+	\centering
+	\includegraphics[width=1\textwidth]{images/StyleTransfer.png}
+	\label{StyleTransfer}
+\end{figure}
+
+\subsubsection{Content Representation}
+When optimized for object recognition, CNNs learn to represent images by making the information of objects more explicit from layer to layer in the network \citep{gatys2015_TextSynth_CNNs}.\\
+Each layer of the CNN defines an array of filters that separates the input image into multiple components, of which the complexity increases with the depth of the layer in the network. The content is captured in the deeper layers of the network in terms of the composition of the objects within the scene. Therefore, the feature responses in the networks higher, or deeper, layers defines an images content representation. \\
+When matching the content features of lower layers in the network, the pixel information remains more detailed and so the content of the output images more accurately depict the original content image, and the texture is "softly" over-layed.
+
+\subsubsection{Style Representation}
+The style representation on an image consists of the correlation between different filter responses. On top of these, a feature space is built that was designed to capture texture information.
+To construct an image that matches the style representation of an artwork, we minimise the MSE between the Gram matrix entries from the input and synthesized images, by performing gradient descent on a white noise image.\\
+In order to generate aesthetically attractive images we need to match the style representation up to higher layers in the network, rather than just a few lower layers.\\\\
+The style and content representations, and their respective reconstructions can be seen in Figure \ref{StyleContentRepresentations}.
+
+\begin{figure}[h]
+	\caption{Style and Content Representations. \citep{gatys2016_StyTrans_CNNs}}
+	\centering
+	\includegraphics[width=1\textwidth]{images/StyleAndContentRepresentations.png}
+	\label{StyleContentRepresentations}
+\end{figure}
+
+\subsubsection{N-styles}
+Several artworks from a specific artist or era (expressionism, modernism, etc.) may share the same style, thus it seems unnecessary to train a new network from scratch for each.
+\citet{dumoulin2017_learnedrepforart} show that the introduction of Conditional Instance Normalization allows a style transfer network to learn multiple styles by reducing each style to a point in an embedding space. In previous models, each style required its own trained network \citep{ulyanov2016_TextureNetworks}.\\
+It is sufficient to, for each style, fine tune the parameters for an affine transformation after normalization, while sharing the convolutional weights of the style transfer network across many styles.\\ This allows for an image to be stylized into $\mathbf{N}$ artwork styles with a single feed forward propagation through the network. In figure \ref{NStyles} we can see how a single style transfer network can capture multiple styles by making use of Conditional Instance Normalization.
+The results achieved in \citet{dumoulin2017_learnedrepforart} state that only 0.2\% of the parameters are unique to each style, whereas 99.8\% of the parameters are shared across many styles.\\\\
+This new learned style representation makes promising progress towards generative models of styles. A network could be trained on artworks from a specific artist or era, and then synthesize a sample that fits the distribution. 
+
+\begin{figure}[h]
+	\caption{N-styles network results \citep{dumoulin2017_learnedrepforart}.}
+	\centering
+	\includegraphics[width=1\textwidth]{images/NStyles.png}
+	\label{NStyles}
+\end{figure}
+
+\subsection{StyleGAN}
+Building on style transfer literature, \citet{karras2019_stylebasedgenerator} propose an alternative style based generator architecture, which enables the unsupervised and automatically learned separation of high level features (identity and pose), from the lower level stochastic variation (hair, marks, eye colour) in the synthesized images. Scale specific modifications of the styles allow greater control over the image synthesis.\\\\
+The most important modification in the style based generator is the input method. Instead of 
+$\mathcal{G}$ receiving the latent code through the input layer, the input layer is omitted all together and the generator begins with a learned constant tensor. It can then adjust the style of images at each layer in the network based on the latent code. The discriminator, along with the loss function, are not modified when using this approach. The comparison of the style based generator network with a traditional generator can be seen in figure \ref{StyleBased}.
+
+\begin{figure}[h]
+	\caption{Traditional vs Style-Based Generator \citep{karras2019_stylebasedgenerator}.}
+	\centering
+	\includegraphics[width=1\textwidth]{images/StyleBasedGenerator.png}
+	\label{StyleBased}
+\end{figure}
+
+
+A non linear mapping network $\mathbf{f}: \mathcal{Z} \rightarrow\mathcal{W}$ produces $\mathbf{w} \in \mathcal{W}$ from a given $\mathbf{z} \in \mathcal{Z}$ (latent space). $\mathbf{f}$ is built as an 8-layer MLP. $\mathbf{w}$ is specialized to styles that control the Adaptive Instance Normalization (AdaIN) operations in the generator network after each layer of convolution. This operation is as follows:
+\begin{equation}
+	\operatorname{AdaIN}\left(\mathbf{x}_{i}, \mathbf{y}\right)=\mathbf{y}_{s, i} \frac{\mathbf{x}_{i}-\mu\left(\mathbf{x}_{i}\right)}{\sigma\left(\mathbf{x}_{i}\right)}+\mathbf{y}_{b, i}
+\end{equation}
+This operation normalizes each channel (unit variance and zero mean), and modifies the importance of the features in the following convolutions.\\
+The quality of the generated images can be analysed by looking at the FID (Frechet Inception Distance) score, with a lower score being better. \\
+The disentanglement of the latent space can be quantified using PPL(Perceptual Path Length) and linear separability.
+
+\subsubsection{Training}
+The authors performed mirror augmentation on all the images in their dataset to essentially double the amount of training samples.\\
+It was determined that the optimal network architecture consisted of leaky ReLU activation functions with $\alpha=2$.\\
+Explicit noise inputs are introduced at each layer of the network to give the generator a means of adding stochastic detail. Doing so results in the stochastic variation throughout the images (such as hair placement, combing direction, stubble and freckles) while preserving the semantic content.
+
+\subsection{Conclusion}
+GANs have been structured in many ways, trained using different methods and on different data, but the design of a style based generator network proved to be superior, in many ways, to the traditional generator architecture, specifically for the synthesis of images \citep{karras2019_stylebasedgenerator}. \\\\
+GANs have been utilized in the generation of several types of data, and even many types of images: human faces, cats, apartments, anime characters, cars, butterflies and more. However, these models have never been used to generate cartoon characters, which are in some ways similar, but also very different to the types of images that have been used up until now. By using cartoons as the image domain, it is expected that the models will need less training data and fewer iterations to produce high quality results, given the relative simplicity, and perhaps greater separability, of the style and content.
+
+\section{Problem Statement}
+Computers and software are always used in one way or another during the creation of a cartoon, but the actual ideas and designs come from the people involved. These ideas are often inspired by nature, or previous man-made creations, but ultimately the human brain is responsible for piecing together all this information to create something new. The development of these new ideas can often be a frustrating job, since the creative mind is unpredictable and works in a very non-linear way, sometimes being trapped in a creative-block.\\\\
+Artificial Intelligence has been used as a tool to generate new designs in the development of cars, chairs, and even buildings. The results have shown that AI can help speed up the design process by employing computers to generate designs at a much faster rate than humans. It is unlikely that computers will ever completely take over the role of humans within the more artistic domains due to the fact that emotion determines how we portray and perceive beauty. However, we can use the near limitless powers of AI, to assist designers and artists in the generation of new ideas, and simply allow the humans to tweak the outcomes as desired, and make the final decisions.\\\\
+
+\section{Research Question}
+\section{Research Aims and Objectives}
+\subsection{Aims}
+This research project will look at the plausibility of using GANs to generate cartoon characters. The goal is to provide artists with character inspiration, and a way of "brain storming" ideas during the process of designing a cartoon character. This could be extended to the frame-by-frame generation of an entire scene of a cartoon, essentially creating a video. 
+\subsection{Objectives}
+The above aims will be achieved through the following objectives:
+\begin{itemize}
+	\item Implementing a baseline GAN on the Cartoon Set \citep{CartoonSet}.
+	\item Optimizing this GAN.
+	\item Quantitative analysis of the results, along with a visual inspection.
+	\item Collect new data of famous cartoon characters (such as Rick and Morty, The Simpsons and Family Guy).
+	\item Preprocess this data:
+	\begin{itemize}
+		\item Crop around face and set to standard size, either $2^6$ (64x64) or $2^7$ (128x128) or $2^8$(256x256).
+		\item Augment with vertical flip.
+		\item Save all images as same data type (.jpg).
+	\end{itemize}
+	\item Train the previously optimized GAN on a subset of this new data.
+	\item Scale to full dataset and re-train.
+	\item Quantitative analysis of the results, along with a visual inspection.
+	\item Implement further optimizations and improvements, and reanalyse results
+\end{itemize}
+\section{Limitations}
+-Datasets are not publicly available.\\
+-Lack of existing high quality cartoon dataset
+\section{Overview}
+Chapter \ref
+
+\chapter{Research Methodology}
+\section{Research Design}
+\subsection{Data}
+The data used in this research will be composed of 2 parts.
+Firstly, a high quality and extremely diverse readily available dataset will be used. This dataset is compiled by a research team at Google \citep{CartoonSet} and a few samples can be seen in figure \ref{CartoonSetSamples}. The dataset consists of cartoons which vary according to 10 artwork categories, 4 colour categories and 4 proportion categories, with $10^{13}$ combinations of these features. Available for download are datasets with 10 000 and 100 000 random samples. This data is licensed by Google LLC under a Creative Commons Attribution 4.0 International License.
+
+
+Secondly, I will gather a dataset of famously known cartoon characters from shows such as Rick and Morty, Family Guy, Disenchantment and Final Space. Since it will be extremely difficult to collect a dataset large enough, the images will also be flipped vertically, to double the amount of data. 
+
+-Collect data of cartoons (such as Rick and Morty, Family Guy, Solar Opposites) using bing\_image\_downloader, or the Google Chrome extension\\
+-Resize all images to be $2^6$ (64x64) or $2^7$ (128x128) or $2^8$(256x256) - square
+
+
+\begin{figure}
+	\centering % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/1.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/2.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/3.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/4.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/5.png}
+	\end{subfigure}\hfill % <-- added
+	
+	\medskip
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/6.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/7.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/8.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/9.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/10.png}
+	\end{subfigure}\hfill % <-- added
+
+	\medskip
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/11.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/12.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/13.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/14.png}
+	\end{subfigure}\hfill % <-- added
+	\begin{subfigure}[h]{0.2\textwidth}
+		\includegraphics[width=\linewidth]{images/15.png}
+	\end{subfigure}\hfill % <-- added
+
+	\caption{Cartoon-Feature Dataset Samples}
+	\label{CartoonSetSamples}
+\end{figure}
+
+
+\subsection{Technologies (Algorithms and software)}
+-GANS\\
+-PyTorch\\
+-GoogleColab for initial smaller models\\
+-Wits Cluster for larger final models\\
+\section{Methods}
+
+
+\section{Analysis}
+Given the nature of image data sets, it is somewhat possible to analyse the results qualitatively by eye. If the generated cartoon characters look like the real images, then we can say that the GAN was successful, otherwise we can say that the approach failed. However, this metric is biased and subjective, and does not really give us a good mathematical and objective analysis. Therefore, we will also make use of the FID Score (Frechet Inception Score) to measure the distance between the real and generated image distributions, taking into account the mean and covariance. A lower score means the generated images are of higher quality, i.e. They more accurately match the real images. The FID score is formulated as follows:
+
+\begin{equation}
+		\mathrm{FID}=\left\|\mu_{\mathrm{X}}-\mu_{\mathrm{Y}}\right\|^{2} - \operatorname{Tr}\left(\sum_{\mathrm{X}}+\sum_{\mathrm{Y}}-2 \quad \sum_{\mathrm{X}} \sum_{\mathrm{Y}}\right)
+\end{equation}
+where $\mathrm{X}$ and $\mathrm{Y}$ are the real and fake embeddings, $\mu_{\mathrm{X}}$ and $\mu_{\mathrm{Y}}$ are the magnitudes of the vectors $\mathrm{X}$ and $\mathrm{Y}$, $\operatorname{Tr}$ is the trace of the matrix and $\sum_{\mathrm{X}}$ and $\sum_{\mathrm{Y}}$ are the covariance matrices of the vectors.
+
+\section{Limitations}
+Most cartoons are not in the public domain and have strict copy rights, therefore high quality datasets do ot exist, since they can not be published. 
+
+\section{Ethical Considerations}
+
+ 
+\chapter{Schedule of Work}
+\section{Schedule}
+Submit research proposal\\
+Implementation basic GAN on cartoon face features dataset\\
+Optimize this GAN \\
+Collect new data (famous cartoon characters) and preprocess\\
+Train the GAN on this new data (a subset)\\
+Scale to full dataset and leave to train for 2 weeks\\
+Conduct experiments\\
+Write research article\\
+Submit research article\\
+
+
+\begin{ganttchart}[
+	vgrid={*1{lightgray, dashed}},
+	x unit=1cm,
+	y unit title=1cm,
+	y unit chart=0.75cm,
+	time slot format=isodate-yearmonth,
+	time slot unit=month,
+	]{2021-02}{2021-11}
+	
+	\gantttitle{Schedule of Work}{10}\\
+	\gantttitlecalendar{month}\\
+	\ganttgroup{Full Project}{2021-02}{2021-11} \\
+	%Phase-1
+	\ganttgroup{Phase 1}{2021-02}{2021-06} \\
+	\ganttbar{Initial Brainstorming and Ideas}{2021-02}{2021-03}\\
+	\ganttlinkedbar{Annotated Bibliography}{2021-04}{2021-04} \\
+	\ganttlinkedbar{Literature Review}{2021-05}{2021-05} \ganttnewline
+	\ganttlinkedbar{Research Proposal}{2021-06}{2021-06} \ganttnewline
+	%Phase-2
+	\ganttgroup{Phase 2}{2021-04}{2021-11} \\
+	\ganttgroup{Aim 1}{2021-05}{2021-6}\\
+	\ganttbar{Sourcing Initial Dataset}{2021-04}{2021-06} \\
+	\ganttlinkedbar{Build and Train Baseline Model}{2021-07}{2021-08} \ganttnewline
+	\ganttlinkedmilestone{Aim 1 completed}{2021-08}\\
+	\ganttgroup{Aim 2}{2021-05}{2021-06}\\
+	\ganttbar{Sourcing Initial Dataset}{2021-04}{2021-06} \\
+	\ganttlinkedbar{Build and Train Baseline Model}{2021-07}{2021-08} \ganttnewline
+	\ganttlinkedmilestone{Aim 1 completed}{2021-08}\\
+	
+	
+	
+	\ganttbar{Research Report}{2021-10}{2021-11} \ganttnewline
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{ganttchart}
+
+
+\section{Potential Difficulties}
+-Model training time\\
+-Data collection and preprocessing
+
+\chapter{Conclusion}
+
+\nocite{*}
+
+\bibliography{references}\addcontentsline{toc}{chapter}{References}
+\end{document}
