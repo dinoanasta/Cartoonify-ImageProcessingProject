@@ -101,7 +101,7 @@
 	\begin{declaration}
 		
 		\vspace{0.5cm}
-		\noindent I, Dino Anastasopoulos, declare that this project is my own, unaided work. It is being submitted for the degree of Honors at the University of the Witwatersrand. It has not been submitted for any degree or examination at any other university.
+		\noindent I, Dino Anastasopoulos, declare that this project is my own, unaided work. It is being submitted for the Honors course in Digital Image Processing at University of the Witwatersrand.
 		
 		\par\vspace{2cm}
 		\begin{flushright}
@@ -124,10 +124,47 @@
 
 	\twocolumn
 	\chapter{Introduction}
-	The following report will explain the techniques used to achieve various artistic image filters and effects. The file size of this document is extremely large, since the images have all been saved in their original quality, to allow for the results to be seen clearly after zooming in to individual images.\\\\
-	Each section will simply show the result for the same image, "Portrait", however, the appendix contains a separate page for each effect applied on many different images across several domains. 
+	 Film cameras required the photographer to develop the image in a darkroom using several methods and techniques to attain different effects. Alongside the development of digital cameras, photo editing has also grown and become more powerful with the use of computer software. The following report will explain the Image Processing techniques used to achieve various artistic image filters and effects, allowing us to understand the magic of what goes on behind the scene in photo-editing software.
+	
+	
+	Each section will simply show the effect applied on the same image, namely "Portrait", as shown in figure \ref{PortraitMain}. Additionally, the appendix contains a separate page for each effect applied on many different images across several domains. 
+	
+	
+	\begin{figure}[h]
+		\caption{Main Image - Portrait}
+		\centering
+		\includegraphics[width=0.8\linewidth]{../Images/Input/Portrait.jpg}
+		\label{PortraitMain}
+	\end{figure}
+
+	\newpage
 	Section \ref{MainEffectsChapter}, "Main Effects", contains the main effects of the project, which have been implemented from scratch using Digital Image Processing techniques. The results of these effects can be found in Appendix \ref{MainEffectsAppendix}. \\
-	Section \ref{ExtraEffectsAppendix}, "Extra Effects", contains extra effects which require very little code, use built-in methods which are part of the OpenCV library, or use external libraries. These have been included out of interest, and because the results are cool and aesthetically pleasing. The results of these effects can be found in Appendix \ref{ExtraEffectsAppendix}.
+	The main effects are as follows:
+	\begin{enumerate}
+		\item Cartoonify
+		\item Pencil Sketch
+		\item Pixelate
+		\item Emboss
+	\end{enumerate}
+
+
+	Section \ref{ExtraEffectsChapter}, "Extra Effects", contains extra effects which require very little code, use built-in methods which are part of the OpenCV library, or use external libraries. These have been included out of interest, and because the results are cool and aesthetically pleasing. The results of these effects can be found in Appendix \ref{ExtraEffectsAppendix}.\\
+	The extra effects are as follows:
+	\begin{enumerate}
+		\item ColorMaps
+		\begin{itemize}
+			\item Duo Chromatic
+			\item Thermal 1
+			\item Thermal 2
+			\item Thermal 3
+			\item UV
+		\end{itemize}
+		\item WaterColor
+		\item Enhance
+		\item Glitch
+	\end{enumerate}
+
+	The file size of this document is extremely large and may take a while to load. This is because the images have all been saved in their original quality, to allow for the results to be seen clearly after zooming in to individual images.
 
 
 	\chapter{Body}
@@ -136,10 +173,10 @@
 
 	\subsection{Main Effect \#1 - Cartoonify}
 	Cartoons are simplified versions of real images, with defined lines, flat colours and very few fine details like exact hair placement, freckles, etc. Therefore, cartoonifying an image consists of two main parts, firstly edge extraction, and secondly colour quantization.
-	The exact steps of the algorithm are as follows:
+	The steps of the algorithm are as follows:
 	\begin{enumerate}[Step 1:]
 		\item Read in colour image.
-		\item Convert to grayscale using cv2.cvtColor
+		\item Convert to grayscale using cv2.cvtColor.
 		\item Blur this gray image using cv2.medianBlur. This step is done to remove stochastic variation and finer details so that only the main edges are extracted in the next step. The reason for this is because, as explained above, cartoons are simplified.
 		\item Extract the edges from this blurred gray image using cv2.adaptiveThreshold.
 		\item Perform colour quantization on the original colour image, using K-means clustering with 10 colours (or clusters). This step is done to decrease the number of colours in the final image, since cartoons have far less colours than real images.
@@ -157,7 +194,19 @@
 	
 	
 	\subsection{Main Effect \#2 - Pencil Sketch}
+	The pencil sketch filter is implemented using a combination of dodging and burning. These are 2 popular editing techniques which originated from the development of film in darkrooms, but are now also in Digital Image Processing software like Adobe PhotoShop.
+	The steps of the algorithm are as follows:
+	\begin{enumerate}[Step 1:]
+		\item Read in colour image.
+		\item Convert to grayscale using cv2.cvtColor.
+		\item Invert this grayscale image using cv2.bitwise\_not.
+		\item Blur this grayscale image using cv2.medianBlur.
+		\item Perform dodging: \\cv2.divide(gray, 255-blurred). \\This technique is done to lighten certain areas in the image. 
+		\item Perform burning: \\255 - cv2.divide(255-dodged, 255-blurred). \\This technique is done to darken certain areas in the image. This step can be excluded if the dark pixel values in the image are not wanted, since the result after dodging is sufficient but lacks the dark sections from the original image.
+		\item After burning, we have our final pencil sketch.
+	\end{enumerate}
 	This process can be seen in Figure \ref{Process_Pencil_Sketch}, and the effect can be seen in Figure \ref{ALLPencilSKetch}.
+
 	\begin{figure}[h]
 		\caption{Pencil Sketch Process}
 		\centering
@@ -168,7 +217,26 @@
 	
 	
 	\subsection{Main Effect \#3 - Pixelate}
-	This process can be seen in Figure \ref{Process_Pixelate}, , and the effect can be seen in Figure \ref{ALLPixelate}.
+	The pixelate effect is implemented by simply resizing the image through interpolating the original image. The effect was tested using several interpolation methods, as follows:
+	\begin{itemize}
+		\item cv2.INTER\_LINEAR
+		\item cv2.INTER\_NEAREST
+		\item cv2.INTER\_CUBIC
+		\item cv2.INTER\_AREA
+		\item cv2.INTER\_LANCZOS4
+	\end{itemize}
+	The differences can be seen in Figure \ref{Process_Pixelate}. Linear interpolation resulted in the best looking images, and so this was chosen as the interpolation method for all the images, as seen in Figure \ref{ALLPixelate}.
+	
+	The implementation process is as follows:
+		\begin{enumerate}[Step 1:]
+		\item Read in colour image.
+		\item Calculate width and height of image.
+		\item Calculate aspect ratio (width/height).
+		\item Set the new length of the shorter side equal to 20.
+		\item Set the new length of the longer side to $20 * AspectRatio$ if the image is landscape or $20 * 1/AspectRatio$ if the image is portrait.
+		\item Resize the image to the new size using cv2.resize() with the Linear Interpolation.
+	\end{enumerate}
+
 	\begin{figure}[h]
 		\caption{Pixelate Process}
 		\centering
@@ -202,13 +270,20 @@
 	
 	\section{Extra Effects}\label{ExtraEffectsChapter}
 	\subsection{Extra Effect \#1 - ColorMaps}
-	Using cv2.applyColorMap(img, chosenMap)\\
+	The following effects, namely Duo, Thermal and UV, were all implemented simply using \\cv2.applyColorMap().\\
 	These effects can be seen in Figure \ref{Images_ColourMaps}.
 	\subsubsection{Duo Chromatic}
-	Random ColorMap selected from [cv2.COLORMAP\_AUTUMN, cv2.COLORMAP\_WINTER, cv2.COLORMAP\_SUMMER, cv2.COLORMAP\_SPRING]\\
+	Random ColorMap selected from the following:
+	\begin{itemize}
+		\item cv2.COLORMAP\_AUTUMN
+		\item cv2.COLORMAP\_WINTER
+		\item cv2.COLORMAP\_SUMMER
+		\item cv2.COLORMAP\_SPRING
+	\end{itemize}
+	These Color Maps create a duo chromatic image, i.e. An image containing two colors.\\
 	This effect can be seen in Figure \ref{Duo} and Figure \ref{ALLDuo}.
 	\subsubsection{Thermal 1}
-	cColourMap used: v2.COLORMAP\_HSV\\
+	ColourMap used: v2.COLORMAP\_HSV\\
 	This effect can be seen in Figure \ref{Thermal1} and Figure \ref{ALLThermal1}.
 	\subsubsection{Thermal 2}
 	ColourMap used: cv2.COLORMAP\_RAINBOW\\
@@ -234,10 +309,10 @@
 
 	
 	\subsection{Extra Effect \#2 - WaterColor}
-	Method used: cv2.stylization(img, sigma\_s=100, sigma\_r=0.9)\\
+	Method used: cv2.stylization()\\
 	This effect can be seen in Figure \ref{WaterColor} and Figure \ref{ALLWaterColor}.
 	\subsection{Extra Effect \#3 - Enhance}
-	Method used: cv2.detailEnhance(img)\\
+	Method used: cv2.detailEnhance()\\
 	This effect can be seen in Figure \ref{Enhance} and Figure \ref{ALLEnhance}.
 	\subsection{Extra Effect \#4 - Glitch}
 	This effect was implemented using a library called glitch\_this, by TotallyNotChase, found at \url{https://github.com/TotallyNotChase/glitch-this}. It is a command-line tool which reads in an image, and applies a glitch effect with a user-provided intensity, and optional scan lines too. I utilized the functionality in Jupyter that allows users to run terminal commands by using "!" before a line of code, and randomly generated the glitch intensity, and also whether or not the scan lines would be applied, in order to get varied results.\\
@@ -258,7 +333,8 @@
 %	
 %	\bibliography{references}\addcontentsline{toc}{chapter}{References}
 %	
-	\chapter{References}
+%	\chapter{References}
+	\section{References}
 	\begin{enumerate}
 		\item \url{https://programmerbackpack.com/python-opencv-building-instagram-like-image-filters/}
 		\item \url{https://python.joho.info/image-processing/opencv-emboss-filter-py/}
