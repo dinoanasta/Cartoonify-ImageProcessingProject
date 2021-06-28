@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.8)  27 JUN 2021 23:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.8)  28 JUN 2021 01:57
 entering extended mode
 **./cartoonify.tex
 (cartoonify.tex
@@ -88,6 +88,10 @@ Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 \c@subfigure=\count191
 \c@subtable=\count192
 )
+(/home/dinoanasta/.miktex/texmfs/install/tex/latex/latex-tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks18
+)
 (/home/dinoanasta/.miktex/texmfs/install/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip50
@@ -98,7 +102,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/home/dinoanasta/.miktex/texmfs/install/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
+\@emptytoks=\toks19
 \ex@=\dimen148
 ))
 (/home/dinoanasta/.miktex/texmfs/install/tex/latex/amsmath/amsbsy.sty
@@ -128,21 +132,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \dotsspace@=\muskip17
 \c@parentequation=\count266
 \dspbrk@lvl=\count267
-\tag@help=\toks19
+\tag@help=\toks20
 \row@=\count268
 \column@=\count269
 \maxfields@=\count270
-\andhelp@=\toks20
+\andhelp@=\toks21
 \eqnshift@=\dimen151
 \alignsep@=\dimen152
 \tagshift@=\dimen153
 \tagwidth@=\dimen154
 \totwidth@=\dimen155
 \lineht@=\dimen156
-\@envbody=\toks21
+\@envbody=\toks22
 \multlinegap=\skip51
 \multlinetaggap=\skip52
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
@@ -159,15 +163,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/home/dinoanasta/.miktex/texmfs/install/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks23
-\thm@bodyfont=\toks24
-\thm@headfont=\toks25
-\thm@notefont=\toks26
-\thm@headpunct=\toks27
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
 \thm@preskip=\skip53
 \thm@postskip=\skip54
 \thm@headsep=\skip55
-\dth@everypar=\toks28
+\dth@everypar=\toks29
 )
 (/home/dinoanasta/.miktex/texmfs/install/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
@@ -367,7 +371,7 @@ Package: pgfgantt 2018/01/10 v5.0 Draw Gantt diagrams with TikZ
 (/home/dinoanasta/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty
 (/home/dinoanasta/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-comm
 on.tex
-\pgfutil@everybye=\toks29
+\pgfutil@everybye=\toks30
 \pgfutil@tempdima=\dimen174
 \pgfutil@tempdimb=\dimen175
 
@@ -390,12 +394,12 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 
 (/home/dinoanasta/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code
 .tex
-\pgfkeys@pathtoks=\toks30
-\pgfkeys@temptoks=\toks31
+\pgfkeys@pathtoks=\toks31
+\pgfkeys@temptoks=\toks32
 
 (/home/dinoanasta/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeysfilte
 red.code.tex
-\pgfkeys@tmptoks=\toks32
+\pgfkeys@tmptoks=\toks33
 ))
 \pgf@x=\dimen176
 \pgf@y=\dimen177
@@ -413,9 +417,9 @@ red.code.tex
 \c@pgf@countb=\count288
 \c@pgf@countc=\count289
 \c@pgf@countd=\count290
-\t@pgf@toka=\toks33
-\t@pgf@tokb=\toks34
-\t@pgf@tokc=\toks35
+\t@pgf@toka=\toks34
+\t@pgf@tokb=\toks35
+\t@pgf@tokc=\toks36
 \pgf@sys@id@count=\count291
 
 (/home/dinoanasta/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
@@ -472,9 +476,9 @@ e.tex
 \pgfmath@dimen=\dimen186
 \pgfmath@count=\count294
 \pgfmath@box=\box52
-\pgfmath@toks=\toks36
-\pgfmath@stack@operand=\toks37
-\pgfmath@stack@operation=\toks38
+\pgfmath@toks=\toks37
+\pgfmath@stack@operand=\toks38
+\pgfmath@stack@operation=\toks39
 )
 (/home/dinoanasta/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
 code.tex
@@ -630,8 +634,8 @@ Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 (/home/dinoanasta/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen269
 \pgffor@skip=\dimen270
-\pgffor@stack=\toks39
-\pgffor@toks=\toks40
+\pgffor@stack=\toks40
+\pgffor@toks=\toks41
 ))
 (/home/dinoanasta/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/tik
 z.code.tex
@@ -748,7 +752,7 @@ File: pgfcalendar.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \gtt@left@slot=\count333
 \gtt@right@slot=\count334
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 39.
+Package hyperref Info: Option `colorlinks' set `true' on input line 44.
  (natbib.sty
 Package: natbib 1999/05/28 7.0 (PWD)
 \bibhang=\skip57
@@ -757,7 +761,7 @@ LaTeX Info: Redefining \cite on input line 508.
 \c@NAT@ctr=\count335
 ) (natbib-add.tex)
 LaTeX Font Info:    Trying to load font information for OT1+bch on input line 6
-3.
+8.
 
 (/home/dinoanasta/.miktex/texmfs/install/tex/latex/psnfss/ot1bch.fd
 File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
@@ -770,24 +774,24 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 ) (cartoonify.aux (Appendices/appendix.aux))
 \openout1 = `cartoonify.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 
 (/home/dinoanasta/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -796,12 +800,12 @@ LaTeX Font Info:    ... okay on input line 63.
 \scratchbox=\box65
 \nofMPsegments=\count338
 \nofMParguments=\count339
-\everyMPshowfont=\toks41
+\everyMPshowfont=\toks42
 \MPscratchCnt=\count340
 \MPscratchDim=\dimen282
 \MPnumerator=\count341
 \makeMPintoPDFobject=\count342
-\everyMPtoPDFconversion=\toks42
+\everyMPtoPDFconversion=\toks43
 )
 (/home/dinoanasta/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.s
 ty
@@ -814,7 +818,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 63.
+Package hyperref Info: Link coloring ON on input line 68.
  (/home/dinoanasta/.miktex/texmfs/install/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -828,30 +832,31 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 \c@section@level=\count343
 LaTeX Info: Redefining \Ref on input line 520.
 )
-LaTeX Info: Redefining \ref on input line 63.
-LaTeX Info: Redefining \pageref on input line 63.
-LaTeX Info: Redefining \nameref on input line 63.
+LaTeX Info: Redefining \ref on input line 68.
+LaTeX Info: Redefining \pageref on input line 68.
+LaTeX Info: Redefining \nameref on input line 68.
  (cartoonify.out) (cartoonify.out)
 \@outlinefile=\write4
 \openout4 = `cartoonify.out'.
 
-LaTeX Info: Redefining \Ref on input line 63.
-<../Images/Output_Individual/Glitch_Portrait.jpg, id=106, 3035.34pt x 4047.12pt
->
-File: ../Images/Output_Individual/Glitch_Portrait.jpg Graphic file (type jpg)
-<use ../Images/Output_Individual/Glitch_Portrait.jpg>
-Package pdftex.def Info: ../Images/Output_Individual/Glitch_Portrait.jpg  used 
-on input line 83.
+LaTeX Info: Redefining \Ref on input line 68.
+<../Images/Output_Individual/Cartoonify_Portrait.jpg, id=102, 3035.34pt x 4047.
+12pt>
+File: ../Images/Output_Individual/Cartoonify_Portrait.jpg Graphic file (type jp
+g)
+<use ../Images/Output_Individual/Cartoonify_Portrait.jpg>
+Package pdftex.def Info: ../Images/Output_Individual/Cartoonify_Portrait.jpg  u
+sed on input line 88.
 (pdftex.def)             Requested size: 226.48395pt x 301.97705pt.
  [0
 
 
 {/home/dinoanasta/.miktex/texmfs/data/pdftex/config/pdftex.map} <../Images/Outp
-ut_Individual/Glitch_Portrait.jpg>]
-<Images/DinoSign.png, id=112, 401.5pt x 200.75pt>
+ut_Individual/Cartoonify_Portrait.jpg>]
+<Images/DinoSign.png, id=108, 401.5pt x 200.75pt>
 File: Images/DinoSign.png Graphic file (type png)
 <use Images/DinoSign.png>
-Package pdftex.def Info: Images/DinoSign.png  used on input line 103.
+Package pdftex.def Info: Images/DinoSign.png  used on input line 108.
 (pdftex.def)             Requested size: 85.35826pt x 42.67947pt.
  [1 <./Images/DinoSign.png>] (cartoonify.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
@@ -878,6 +883,51 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Chapter 1.
+
+Overfull \hbox (0.4753pt too wide) in paragraph at lines 127--131
+[]\OT1/bch/m/n/10 The following report will explain the techniques
+ []
+
+
+Overfull \hbox (0.14528pt too wide) in paragraph at lines 127--131
+\OT1/bch/m/n/10 used to achieve various artistic image filters and
+ []
+
+
+Overfull \hbox (7.90195pt too wide) in paragraph at lines 127--131
+\OT1/bch/m/n/10 effects. The file size of this document is extremely
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
+
+ []
+
+
+Overfull \hbox (7.69525pt too wide) in paragraph at lines 127--131
+\OT1/bch/m/n/10 on many different images across several domains.
+ []
+
+
+Overfull \hbox (18.24928pt too wide) in paragraph at lines 127--131
+\OT1/bch/m/n/10 effects of the project, which have been implemented
+ []
+
+
+Overfull \hbox (33.81522pt too wide) in paragraph at lines 127--131
+\OT1/bch/m/n/10 from scratch using Digital Image Processing techniques.
+ []
+
+
+Overfull \hbox (19.47528pt too wide) in paragraph at lines 127--131
+\OT1/bch/m/n/10 The results of these effects can be found in Appendix
+ []
+
+
+Overfull \hbox (12.7793pt too wide) in paragraph at lines 127--131
+\OT1/bch/m/n/10 which require very little code, use built-in methods
+ []
+
 [1
 
 
@@ -885,360 +935,457 @@ Chapter 1.
 ]
 Chapter 2.
 
-Underfull \hbox (badness 1721) in paragraph at lines 130--131
-\OT1/bch/m/n/10 This section contains the main effects of the
+Overfull \hbox (0.22534pt too wide) in paragraph at lines 142--143
+[]\OT1/bch/m/n/10 Convert to grayscale using cv2.cvtColor 
  []
 
 
-Underfull \hbox (badness 3525) in paragraph at lines 130--131
-\OT1/bch/m/n/10 project, which have been implemented from
+Overfull \hbox (14.63536pt too wide) in paragraph at lines 143--144
+[]\OT1/bch/m/n/10 Blur this gray image using cv2.medianBlur.
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 133--140
-\OT1/bch/m/n/10 from image since cartoons are simple. Edge
+Overfull \hbox (1.70535pt too wide) in paragraph at lines 143--144
+\OT1/bch/m/n/10 the main edges are extracted in the next
  []
 
 
-Underfull \hbox (badness 2521) in paragraph at lines 133--140
-\OT1/bch/m/n/10 detection on blurred gray image. Using k-
+Overfull \hbox (6.52928pt too wide) in paragraph at lines 143--144
+\OT1/bch/m/n/10 explained above, cartoons are simplified. 
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 133--140
-\OT1/bch/m/n/10 Gaussian blurring to remove further details.
+Overfull \hbox (0.57535pt too wide) in paragraph at lines 144--145
+[]\OT1/bch/m/n/10 Extract the edges from this blurred gray
  []
 
 
-Underfull \hbox (badness 3735) in paragraph at lines 133--140
-\OT1/bch/m/n/10 Combine extracted edges with clustered and
+Overfull \hbox (16.84528pt too wide) in paragraph at lines 145--146
+[]\OT1/bch/m/n/10 Perform colour quantization on the original
+ []
+
+
+Overfull \hbox (8.34528pt too wide) in paragraph at lines 145--146
+\OT1/bch/m/n/10 is done to decrease the number of colours
+ []
+
+
+Overfull \hbox (18.81528pt too wide) in paragraph at lines 146--147
+\OT1/bch/m/n/10 once again remove "noise" and finer details. 
+ []
+
+
+Overfull \hbox (17.06532pt too wide) in paragraph at lines 147--148
+[]\OT1/bch/m/n/10 Combine the extracted edges with reduced-
+ []
+
+
+Overfull \hbox (4.13533pt too wide) in paragraph at lines 147--148
+\OT1/bch/m/n/10 colour blurred image to achieve the final
  []
 
 <../Images/Process/Effect1_Cartoonify.jpg, id=196, 1190.64825pt x 1339.1631pt>
 File: ../Images/Process/Effect1_Cartoonify.jpg Graphic file (type jpg)
 <use ../Images/Process/Effect1_Cartoonify.jpg>
 Package pdftex.def Info: ../Images/Process/Effect1_Cartoonify.jpg  used on inpu
-t line 144.
-(pdftex.def)             Requested size: 221.48395pt x 249.11037pt.
-<../Images/Process/Effect2_Pencil_Sketch.jpg, id=198, 1246.6575pt x 902.6523pt>
+t line 154.
+(pdftex.def)             Requested size: 205.14438pt x 230.7198pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../Images/Process/Effect2_Pencil_Sketch.jpg, id=199, 1246.6575pt x 902.6523pt>
 
 File: ../Images/Process/Effect2_Pencil_Sketch.jpg Graphic file (type jpg)
 <use ../Images/Process/Effect2_Pencil_Sketch.jpg>
 Package pdftex.def Info: ../Images/Process/Effect2_Pencil_Sketch.jpg  used on i
-nput line 157.
-(pdftex.def)             Requested size: 221.48395pt x 160.36308pt.
-<../Images/Process/Effect3_Pixelate.jpg, id=200, 1246.6575pt x 466.1415pt>
-File: ../Images/Process/Effect3_Pixelate.jpg Graphic file (type jpg)
-<use ../Images/Process/Effect3_Pixelate.jpg>
-Package pdftex.def Info: ../Images/Process/Effect3_Pixelate.jpg  used on input 
-line 169.
-(pdftex.def)             Requested size: 221.48395pt x 82.8136pt.
-<../Images/Process/Effect4_Emboss.jpg, id=202, 854.59274pt x 466.1415pt>
-File: ../Images/Process/Effect4_Emboss.jpg Graphic file (type jpg)
-<use ../Images/Process/Effect4_Emboss.jpg>
-Package pdftex.def Info: ../Images/Process/Effect4_Emboss.jpg  used on input li
-ne 183.
-(pdftex.def)             Requested size: 221.48395pt x 120.80983pt.
+nput line 164.
+(pdftex.def)             Requested size: 205.14438pt x 148.53177pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<../Images/Process/Effect3_Pixelate.jpg, id=202, 1246.6575pt x 466.1415pt>
+File: ../Images/Process/Effect3_Pixelate.jpg Graphic file (type jpg)
+<use ../Images/Process/Effect3_Pixelate.jpg>
+Package pdftex.def Info: ../Images/Process/Effect3_Pixelate.jpg  used on input 
+line 175.
+(pdftex.def)             Requested size: 205.14438pt x 76.70375pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (0.76526pt too wide) in paragraph at lines 183--185
+\OT1/bch/m/n/10 pixel (in our case it will be a colour pixel instead
+ []
+
+
+Overfull \hbox (15.49522pt too wide) in paragraph at lines 183--185
+\OT1/bch/m/n/10 depending on the direction of embossing as defined
+ []
+
 [2
 
- <../Images/Process/Effect1_Cartoonify.jpg> <../Images/Process/Effect2_Pencil_S
-ketch.jpg> <../Images/Process/Effect3_Pixelate.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-\OT1/bch/m/n/10 Random ColorMap selected
+ <../Images/Process/Effect1_Cartoonify.jpg>]
+LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
+86.
+
+(/home/dinoanasta/.miktex/texmfs/install/tex/latex/psnfss/ts1bch.fd
+File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
+)
+<../Images/Process/Effect4_Emboss.jpg, id=216, 1190.64825pt x 1339.1631pt>
+File: ../Images/Process/Effect4_Emboss.jpg Graphic file (type jpg)
+<use ../Images/Process/Effect4_Emboss.jpg>
+Package pdftex.def Info: ../Images/Process/Effect4_Emboss.jpg  used on input li
+ne 198.
+(pdftex.def)             Requested size: 205.14438pt x 230.7198pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (62.16528pt too wide) in paragraph at lines 208--210
+\OT1/bch/m/n/10 Random ColorMap selected from [cv2.COLORMAP[]AUTUMN,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-\OT1/bch/m/n/10 from [cv2.COLORMAP[]AUTUMN,
+Overfull \hbox (31.54544pt too wide) in paragraph at lines 208--210
+\OT1/bch/m/n/10 cv2.COLORMAP[]WINTER, cv2.COLORMAP[]SUMMER,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-\OT1/bch/m/n/10 cv2.COLORMAP[]WINTER,
+Overfull \hbox (0.79533pt too wide) in paragraph at lines 208--210
+\OT1/bch/m/n/10 This effect can be seen in Figure [][]2.5a[][] and Figure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-\OT1/bch/m/n/10 cv2.COLORMAP[]SUMMER,
+Overfull \hbox (1.11533pt too wide) in paragraph at lines 211--213
+\OT1/bch/m/n/10 This effect can be seen in Figure [][]2.5b[][] and Figure
  []
 
-<../Images/Output_Individual/Duo_Portrait.jpg, id=213, 3035.34pt x 4047.12pt>
+
+Overfull \hbox (0.18533pt too wide) in paragraph at lines 214--216
+\OT1/bch/m/n/10 This effect can be seen in Figure [][]2.5c[][] and Figure
+ []
+
+
+Overfull \hbox (1.37534pt too wide) in paragraph at lines 217--219
+\OT1/bch/m/n/10 This effect can be seen in Figure [][]2.5d[][] and Figure
+ []
+
+
+Overfull \hbox (0.63533pt too wide) in paragraph at lines 220--222
+\OT1/bch/m/n/10 This effect can be seen in Figure [][]2.5e[][] and Figure
+ []
+
+<../Images/Output_Individual/Duo_Portrait.jpg, id=228, 3035.34pt x 4047.12pt>
 File: ../Images/Output_Individual/Duo_Portrait.jpg Graphic file (type jpg)
 <use ../Images/Output_Individual/Duo_Portrait.jpg>
 Package pdftex.def Info: ../Images/Output_Individual/Duo_Portrait.jpg  used on 
-input line 212.
-(pdftex.def)             Requested size: 66.44585pt x 88.55522pt.
-<../Images/Output_Individual/Thermal1_Portrait.jpg, id=214, 3035.34pt x 4047.12
+input line 224.
+(pdftex.def)             Requested size: 61.54393pt x 82.00931pt.
+<../Images/Output_Individual/Thermal1_Portrait.jpg, id=229, 3035.34pt x 4047.12
 pt>
 File: ../Images/Output_Individual/Thermal1_Portrait.jpg Graphic file (type jpg)
 
 <use ../Images/Output_Individual/Thermal1_Portrait.jpg>
 Package pdftex.def Info: ../Images/Output_Individual/Thermal1_Portrait.jpg  use
-d on input line 213.
-(pdftex.def)             Requested size: 66.44585pt x 88.55522pt.
-<../Images/Output_Individual/Thermal2_Portrait.jpg, id=215, 3035.34pt x 4047.12
+d on input line 225.
+(pdftex.def)             Requested size: 61.54393pt x 82.00931pt.
+<../Images/Output_Individual/Thermal2_Portrait.jpg, id=230, 3035.34pt x 4047.12
 pt>
 File: ../Images/Output_Individual/Thermal2_Portrait.jpg Graphic file (type jpg)
 
 <use ../Images/Output_Individual/Thermal2_Portrait.jpg>
 Package pdftex.def Info: ../Images/Output_Individual/Thermal2_Portrait.jpg  use
-d on input line 214.
-(pdftex.def)             Requested size: 66.44585pt x 88.55522pt.
-<../Images/Output_Individual/Thermal3_Portrait.jpg, id=216, 3035.34pt x 4047.12
+d on input line 226.
+(pdftex.def)             Requested size: 61.54393pt x 82.00931pt.
+<../Images/Output_Individual/Thermal3_Portrait.jpg, id=231, 3035.34pt x 4047.12
 pt>
 File: ../Images/Output_Individual/Thermal3_Portrait.jpg Graphic file (type jpg)
 
 <use ../Images/Output_Individual/Thermal3_Portrait.jpg>
 Package pdftex.def Info: ../Images/Output_Individual/Thermal3_Portrait.jpg  use
-d on input line 215.
-(pdftex.def)             Requested size: 66.44585pt x 88.55522pt.
-<../Images/Output_Individual/UV_Portrait.jpg, id=217, 3035.34pt x 4047.12pt>
+d on input line 227.
+(pdftex.def)             Requested size: 61.54393pt x 82.00931pt.
+<../Images/Output_Individual/UV_Portrait.jpg, id=232, 3035.34pt x 4047.12pt>
 File: ../Images/Output_Individual/UV_Portrait.jpg Graphic file (type jpg)
 <use ../Images/Output_Individual/UV_Portrait.jpg>
 Package pdftex.def Info: ../Images/Output_Individual/UV_Portrait.jpg  used on i
-nput line 216.
-(pdftex.def)             Requested size: 66.44585pt x 88.55522pt.
+nput line 228.
+(pdftex.def)             Requested size: 61.54393pt x 82.00931pt.
+[3 <../Images/Process/Effect2_Pencil_Sketch.jpg> <../Images/Process/Effect3_Pix
+elate.jpg> <../Images/Process/Effect4_Emboss.jpg>]
+Overfull \hbox (6.29436pt too wide) in paragraph at lines 237--239
+\OT1/bch/m/n/10 Method used: cv2.stylization(img, sigma[]s=100,
+ []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Images/Output_Individual/WaterColour_Portrait.jpg, id=222, 3035.34pt x 4047
+Overfull \hbox (0.79533pt too wide) in paragraph at lines 237--239
+\OT1/bch/m/n/10 This effect can be seen in Figure [][]2.6a[][] and Figure
+ []
+
+
+Overfull \hbox (1.11533pt too wide) in paragraph at lines 240--242
+\OT1/bch/m/n/10 This effect can be seen in Figure [][]2.6b[][] and Figure
+ []
+
+
+Overfull \hbox (9.11528pt too wide) in paragraph at lines 243--245
+\OT1/bch/m/n/10 This effect was implemented using a library called
+ []
+
+
+Overfull \hbox (1.9631pt too wide) in paragraph at lines 243--245
+\OT1/bch/m/n/10 glitch[]this, by TotallyNotChase, found at [][]$\OT1/cmtt/m/n/1
+0 https :
+ []
+
+
+Overfull \hbox (8.13379pt too wide) in paragraph at lines 243--245
+\OT1/cmtt/m/n/10 / / github . com / TotallyNotChase / glitch -[] this$[][]\OT1/
+bch/m/n/10 .
+ []
+
+
+Overfull \hbox (1.01466pt too wide) in paragraph at lines 243--245
+\OT1/bch/m/n/10 I utilized the functionality in Jupyter that allows
+ []
+
+
+Overfull \hbox (0.18533pt too wide) in paragraph at lines 243--245
+\OT1/bch/m/n/10 This effect can be seen in Figure [][]2.6c[][] and Figure
+ []
+
+<../Images/Output_Individual/WaterColour_Portrait.jpg, id=248, 3035.34pt x 4047
 .12pt>
 File: ../Images/Output_Individual/WaterColour_Portrait.jpg Graphic file (type j
 pg)
 <use ../Images/Output_Individual/WaterColour_Portrait.jpg>
 Package pdftex.def Info: ../Images/Output_Individual/WaterColour_Portrait.jpg  
-used on input line 236.
-(pdftex.def)             Requested size: 66.44585pt x 88.55522pt.
-<../Images/Output_Individual/Enhance_Portrait.jpg, id=223, 3035.34pt x 4047.12p
+used on input line 248.
+(pdftex.def)             Requested size: 61.54393pt x 82.00931pt.
+<../Images/Output_Individual/Enhance_Portrait.jpg, id=249, 3035.34pt x 4047.12p
 t>
 File: ../Images/Output_Individual/Enhance_Portrait.jpg Graphic file (type jpg)
 <use ../Images/Output_Individual/Enhance_Portrait.jpg>
 Package pdftex.def Info: ../Images/Output_Individual/Enhance_Portrait.jpg  used
- on input line 237.
-(pdftex.def)             Requested size: 66.44585pt x 88.55522pt.
+ on input line 249.
+(pdftex.def)             Requested size: 61.54393pt x 82.00931pt.
+<../Images/Output_Individual/Glitch_Portrait.jpg, id=250, 3035.34pt x 4047.12pt
+>
 File: ../Images/Output_Individual/Glitch_Portrait.jpg Graphic file (type jpg)
 <use ../Images/Output_Individual/Glitch_Portrait.jpg>
 Package pdftex.def Info: ../Images/Output_Individual/Glitch_Portrait.jpg  used 
-on input line 238.
-(pdftex.def)             Requested size: 66.44585pt x 88.55522pt.
+on input line 250.
+(pdftex.def)             Requested size: 61.54393pt x 82.00931pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3 <../Images/Process/Effect4_Emboss.jpg> <../Images/Output_Individual/Duo_Port
-rait.jpg> <../Images/Output_Individual/Thermal1_Portrait.jpg> <../Images/Output
-_Individual/Thermal2_Portrait.jpg> <../Images/Output_Individual/Thermal3_Portra
-it.jpg> <../Images/Output_Individual/UV_Portrait.jpg>] [4
-
- <../Images/Output_Individual/WaterColour_Portrait.jpg> <../Images/Output_Indiv
-idual/Enhance_Portrait.jpg>]
+[4 <../Images/Output_Individual/Duo_Portrait.jpg> <../Images/Output_Individual/
+Thermal1_Portrait.jpg> <../Images/Output_Individual/Thermal2_Portrait.jpg> <../
+Images/Output_Individual/Thermal3_Portrait.jpg> <../Images/Output_Individual/UV
+_Portrait.jpg> <../Images/Output_Individual/WaterColour_Portrait.jpg> <../Image
+s/Output_Individual/Enhance_Portrait.jpg> <../Images/Output_Individual/Glitch_P
+ortrait.jpg>]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+Overfull \hbox (19.85391pt too wide) in paragraph at lines 263--264
 [][][]$\OT1/cmtt/m/n/10 https : / / programmerbackpack . com / python -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+Overfull \hbox (16.60396pt too wide) in paragraph at lines 263--264
 \OT1/cmtt/m/n/10 opencv -[] building -[] instagram -[] like -[] image -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
-[][][]$\OT1/cmtt/m/n/10 https : / / python . joho . info / image -[]
+Overfull \hbox (40.85373pt too wide) in paragraph at lines 264--265
+[][][]$\OT1/cmtt/m/n/10 https : / / python . joho . info / image -[] processing
+ /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
-[][][]$\OT1/cmtt/m/n/10 https : / / ulwazi . wits . ac . za / courses /
+Overfull \hbox (29.85382pt too wide) in paragraph at lines 265--266
+[][][]$\OT1/cmtt/m/n/10 https : / / ulwazi . wits . ac . za / courses / 12061 /
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
-\OT1/cmtt/m/n/10 12061 / assignments / 72155 ? module _ item _
+Overfull \hbox (24.60387pt too wide) in paragraph at lines 265--266
+\OT1/cmtt/m/n/10 assignments / 72155 ? module _ item _ id = 217456$[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Overfull \hbox (4.10405pt too wide) in paragraph at lines 266--267
 [][][]$\OT1/cmtt/m/n/10 https : / / github . com / mbeyeler / opencv -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
-\OT1/cmtt/m/n/10 python -[] blueprints / blob / master /
+Overfull \hbox (25.10387pt too wide) in paragraph at lines 266--267
+\OT1/cmtt/m/n/10 python -[] blueprints / blob / master / chapter1 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
-[][][]$\OT1/cmtt/m/n/10 https : / / analyticsindiamag . com /
+Overfull \hbox (35.60378pt too wide) in paragraph at lines 267--268
+[][][]$\OT1/cmtt/m/n/10 https : / / analyticsindiamag . com / converting -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
-[][][]$\OT1/cmtt/m/n/10 https : / / www . tutorialspoint . com /
+Overfull \hbox (40.85373pt too wide) in paragraph at lines 268--269
+[][][]$\OT1/cmtt/m/n/10 https : / / www . tutorialspoint . com / cartooning -[]
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
-\OT1/cmtt/m/n/10 cartooning -[] an -[] image -[] using -[] opencv -[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
+Overfull \hbox (19.85391pt too wide) in paragraph at lines 269--270
 [][][]$\OT1/cmtt/m/n/10 https : / / www . askaswiss . com / 2016 / 01 / how -[]
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
-\OT1/cmtt/m/n/10 to -[] create -[] cartoon -[] effect -[] opencv -[]
+Overfull \hbox (27.10387pt too wide) in paragraph at lines 269--270
+\OT1/cmtt/m/n/10 to -[] create -[] cartoon -[] effect -[] opencv -[] python .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
-[][][]$\OT1/cmtt/m/n/10 https : / / data -[] flair . training / blogs /
+Overfull \hbox (57.10359pt too wide) in paragraph at lines 270--271
+[][][]$\OT1/cmtt/m/n/10 https : / / data -[] flair . training / blogs / cartoon
+ify -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-[][][]$\OT1/cmtt/m/n/10 https : / / subscription . packtpub .
+Overfull \hbox (24.60387pt too wide) in paragraph at lines 271--272
+[][][]$\OT1/cmtt/m/n/10 https : / / subscription . packtpub . com / book /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-\OT1/cmtt/m/n/10 com / book / application _ development /
+Overfull \hbox (19.35391pt too wide) in paragraph at lines 271--272
+\OT1/cmtt/m/n/10 application _ development / 9781785282690 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-\OT1/cmtt/m/n/10 9781785282690 / 1 / ch01lvl1sec12 /
+Overfull \hbox (15.10396pt too wide) in paragraph at lines 271--272
+\OT1/cmtt/m/n/10 1 / ch01lvl1sec12 / cartoonizing -[] an -[] image$[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Overfull \hbox (9.354pt too wide) in paragraph at lines 272--273
 [][][]$\OT1/cmtt/m/n/10 https : / / towardsdatascience . com / turn -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Overfull \hbox (0.8541pt too wide) in paragraph at lines 272--273
 \OT1/cmtt/m/n/10 photos -[] into -[] cartoons -[] using -[] python -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-[][][]$\OT1/cmtt/m/n/10 https : / / www . geeksforgeeks . org /
+Overfull \hbox (35.60378pt too wide) in paragraph at lines 273--274
+[][][]$\OT1/cmtt/m/n/10 https : / / www . geeksforgeeks . org / cartooning -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-\OT1/cmtt/m/n/10 cartooning -[] an -[] image -[] using -[] opencv -[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Overfull \hbox (14.60396pt too wide) in paragraph at lines 274--275
 [][][]$\OT1/cmtt/m/n/10 https : / / towardsdatascience . com / using -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
-\OT1/cmtt/m/n/10 opencv -[] to -[] catoonize -[] an -[] image -[]
+Overfull \hbox (37.60378pt too wide) in paragraph at lines 274--275
+\OT1/cmtt/m/n/10 opencv -[] to -[] catoonize -[] an -[] image -[] 1211473941b6$
+[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
-[][][]$\OT1/cmtt/m/n/10 http : / / datahacker . rs / 002 -[] opencv -[]
+Overfull \hbox (36.60378pt too wide) in paragraph at lines 275--276
+[][][]$\OT1/cmtt/m/n/10 http : / / datahacker . rs / 002 -[] opencv -[] project
+s -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
-\OT1/cmtt/m/n/10 projects -[] how -[] to -[] cartoonize -[] an -[] image -[]
+Overfull \hbox (28.10387pt too wide) in paragraph at lines 275--276
+\OT1/cmtt/m/n/10 how -[] to -[] cartoonize -[] an -[] image -[] with -[] opencv
+ -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Overfull \hbox (4.10405pt too wide) in paragraph at lines 276--277
 [][][]$\OT1/cmtt/m/n/10 https : / / medium . com / boundlessinfo / a -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Overfull \hbox (6.60405pt too wide) in paragraph at lines 276--277
 \OT1/cmtt/m/n/10 mini -[] project -[] with -[] opencv -[] in -[] python -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
-[][][]$\OT1/cmtt/m/n/10 https : / / jrtechs . net / data -[] science /
+Overfull \hbox (41.35373pt too wide) in paragraph at lines 277--278
+[][][]$\OT1/cmtt/m/n/10 https : / / jrtechs . net / data -[] science / creating
+ -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
-[][][]$\OT1/cmtt/m/n/10 https : / / www . programmersought . com /
+Overfull \hbox (35.10378pt too wide) in paragraph at lines 278--279
+[][][]$\OT1/cmtt/m/n/10 https : / / www . programmersought . com / article /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
-[][][]$\OT1/cmtt/m/n/10 https : / / subscription . packtpub .
+Overfull \hbox (24.60387pt too wide) in paragraph at lines 279--280
+[][][]$\OT1/cmtt/m/n/10 https : / / subscription . packtpub . com / book /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
-\OT1/cmtt/m/n/10 com / book / application _ development /
+Overfull \hbox (19.35391pt too wide) in paragraph at lines 279--280
+\OT1/cmtt/m/n/10 application _ development / 9781785283932 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
-\OT1/cmtt/m/n/10 9781785283932 / 2 / ch02lvl1sec23 /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Overfull \hbox (8.854pt too wide) in paragraph at lines 280--281
 [][][]$\OT1/cmtt/m/n/10 https : / / stackoverflow . com / questions /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Overfull \hbox (16.60396pt too wide) in paragraph at lines 280--281
 \OT1/cmtt/m/n/10 55508615 / how -[] to -[] pixelate -[] image -[] using -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
-[][][]$\OT1/cmtt/m/n/10 https : / / www . freecodecamp . org / news /
+Overfull \hbox (51.35364pt too wide) in paragraph at lines 281--282
+[][][]$\OT1/cmtt/m/n/10 https : / / www . freecodecamp . org / news / sketchify
+ -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
-\OT1/cmtt/m/n/10 sketchify -[] turn -[] any -[] image -[] into -[] a -[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
-\OT1/cmtt/m/n/10 pencil -[] sketch -[] with -[] 10 -[] lines -[] of -[] code -[
+Overfull \hbox (12.354pt too wide) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10 turn -[] any -[] image -[] into -[] a -[] pencil -[] sketch -[
 ]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--271
-[][][]$\OT1/cmtt/m/n/10 https : / / medium . com / analytics -[]
+Overfull \hbox (6.10405pt too wide) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10 with -[] 10 -[] lines -[] of -[] code -[] cf67fa4f68ce/$[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--271
-\OT1/cmtt/m/n/10 vidhya / create -[] your -[] own -[] sketch -[] with -[]
+Overfull \hbox (9.354pt too wide) in paragraph at lines 282--283
+[][][]$\OT1/cmtt/m/n/10 https : / / medium . com / analytics -[] vidhya /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
-[][][]$\OT1/cmtt/m/n/10 https : / / analyticsindiamag . com /
+Overfull \hbox (6.60405pt too wide) in paragraph at lines 282--283
+\OT1/cmtt/m/n/10 create -[] your -[] own -[] sketch -[] with -[] opencv -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
-\OT1/cmtt/m/n/10 converting -[] image -[] into -[] a -[] pencil -[]
+Overfull \hbox (35.60378pt too wide) in paragraph at lines 283--284
+[][][]$\OT1/cmtt/m/n/10 https : / / analyticsindiamag . com / converting -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
+Overfull \hbox (17.10396pt too wide) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10 image -[] into -[] a -[] pencil -[] sketch -[] in -[] python/$
+[][] 
+ []
+
+
+Overfull \hbox (14.60396pt too wide) in paragraph at lines 284--285
 [][][]$\OT1/cmtt/m/n/10 https : / / bastelhalde . de / post / creating -[]
  []
 
@@ -1249,148 +1396,153 @@ Underfull \hbox (badness 10000) in paragraph at lines 272--273
 
  (Appendices/appendix.tex
 Appendix A.
-<../Images/Output_All/ALL_Cartoonify.jpg, id=324, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_Cartoonify.jpg, id=338, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_Cartoonify.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Cartoonify.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Cartoonify.jpg  used on input
- line 16.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
-<../Images/Output_All/ALL_Pencil_Sketch.jpg, id=325, 1190.64825pt x 1651.3695pt
+ line 17.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../Images/Output_All/ALL_Pencil_Sketch.jpg, id=339, 1190.64825pt x 1651.3695pt
 >
 File: ../Images/Output_All/ALL_Pencil_Sketch.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Pencil_Sketch.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Pencil_Sketch.jpg  used on in
-put line 24.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
+put line 25.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Images/Output_All/ALL_Pixelate.jpg, id=326, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_Pixelate.jpg, id=340, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_Pixelate.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Pixelate.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Pixelate.jpg  used on input l
-ine 32.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
+ine 33.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Images/Output_All/ALL_Emboss.jpg, id=327, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_Emboss.jpg, id=341, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_Emboss.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Emboss.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Emboss.jpg  used on input lin
-e 39.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
+e 40.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6
 
 
- <../Images/Output_All/ALL_Cartoonify.jpg> <../Images/Output_All/ALL_Pencil_Ske
-tch.jpg>] [7 <../Images/Output_All/ALL_Pixelate.jpg> <../Images/Output_All/ALL_
-Emboss.jpg>]
+
+] [7 <../Images/Output_All/ALL_Cartoonify.jpg>] [8 <../Images/Output_All/ALL_Pe
+ncil_Sketch.jpg>] [9 <../Images/Output_All/ALL_Pixelate.jpg>] [10 <../Images/Ou
+tput_All/ALL_Emboss.jpg>]
 Appendix B.
-LaTeX Font Info:    Trying to load font information for TS1+bch on input line 5
-2.
-(/home/dinoanasta/.miktex/texmfs/install/tex/latex/psnfss/ts1bch.fd
-File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
-)
-<../Images/Output_All/ALL_Duo.jpg, id=340, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_Duo.jpg, id=367, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_Duo.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Duo.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Duo.jpg  used on input line 6
-8.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
-<../Images/Output_All/ALL_Thermal1.jpg, id=341, 1190.64825pt x 1651.3695pt>
+9.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../Images/Output_All/ALL_Thermal1.jpg, id=368, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_Thermal1.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Thermal1.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Thermal1.jpg  used on input l
-ine 75.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
-
+ine 76.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Images/Output_All/ALL_Thermal2.jpg, id=342, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_Thermal2.jpg, id=369, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_Thermal2.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Thermal2.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Thermal2.jpg  used on input l
-ine 82.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
+ine 83.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Images/Output_All/ALL_Thermal3.jpg, id=343, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_Thermal3.jpg, id=370, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_Thermal3.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Thermal3.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Thermal3.jpg  used on input l
-ine 89.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
+ine 90.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Images/Output_All/ALL_UV.jpg, id=344, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_UV.jpg, id=371, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_UV.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_UV.jpg>
-Package pdftex.def Info: ../Images/Output_All/ALL_UV.jpg  used on input line 96
+Package pdftex.def Info: ../Images/Output_All/ALL_UV.jpg  used on input line 97
 .
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Images/Output_All/ALL_WaterColour.jpg, id=345, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_WaterColour.jpg, id=372, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_WaterColour.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_WaterColour.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_WaterColour.jpg  used on inpu
-t line 103.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
+t line 104.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Images/Output_All/ALL_Enhance.jpg, id=346, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_Enhance.jpg, id=373, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_Enhance.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Enhance.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Enhance.jpg  used on input li
-ne 110.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
+ne 111.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Images/Output_All/ALL_Glitch.jpg, id=347, 1190.64825pt x 1651.3695pt>
+<../Images/Output_All/ALL_Glitch.jpg, id=374, 1190.64825pt x 1651.3695pt>
 File: ../Images/Output_All/ALL_Glitch.jpg Graphic file (type jpg)
 <use ../Images/Output_All/ALL_Glitch.jpg>
 Package pdftex.def Info: ../Images/Output_All/ALL_Glitch.jpg  used on input lin
-e 117.
-(pdftex.def)             Requested size: 221.48395pt x 307.18683pt.
+e 118.
+(pdftex.def)             Requested size: 452.9679pt x 628.23248pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [8
+) [11
 
- <../Images/Output_All/ALL_Duo.jpg> <../Images/Output_All/ALL_Thermal1.jpg>] [9
- <../Images/Output_All/ALL_Thermal2.jpg> <../Images/Output_All/ALL_Thermal3.jpg
->] [10 <../Images/Output_All/ALL_UV.jpg> <../Images/Output_All/ALL_WaterColour.
-jpg>] [11 <../Images/Output_All/ALL_Enhance.jpg> <../Images/Output_All/ALL_Glit
-ch.jpg>] (cartoonify.aux (Appendices/appendix.aux))
+] [12 <../Images/Output_All/ALL_Duo.jpg>] [13 <../Images/Output_All/ALL_Thermal
+1.jpg>] [14 <../Images/Output_All/ALL_Thermal2.jpg>] [15 <../Images/Output_All/
+ALL_Thermal3.jpg>] [16 <../Images/Output_All/ALL_UV.jpg>] [17 <../Images/Output
+_All/ALL_WaterColour.jpg>] [18 <../Images/Output_All/ALL_Enhance.jpg>]
+[19 <../Images/Output_All/ALL_Glitch.jpg>] (cartoonify.aux
+(Appendices/appendix.aux))
 Package rerunfilecheck Info: File `cartoonify.out' has not changed.
-(rerunfilecheck)             Checksum: 31F5DFECCB72F28A489C61029817BBCB;3658.
+(rerunfilecheck)             Checksum: D99498E04BB6336C2FC5AF47FD851D59;3537.
  ) 
 Here is how much of TeX's memory you used:
- 25283 strings out of 481257
- 486386 string characters out of 2907981
- 763256 words of memory out of 3000000
- 41952 multiletter control sequences out of 15000+600000
+ 25328 strings out of 481257
+ 487093 string characters out of 2907981
+ 763708 words of memory out of 3000000
+ 41980 multiletter control sequences out of 15000+600000
  423253 words of font info for 57 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 102i,8n,103p,588b,552s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 102i,8n,103p,721b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/dinoanasta/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc}</home/d
 inoanasta/.miktex/texmfs/install/fonts/type1/bitstrea/charter/bchb8a.pfb></home
 /dinoanasta/.miktex/texmfs/install/fonts/type1/bitstrea/charter/bchr8a.pfb></ho
-me/dinoanasta/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-
-Output written on cartoonify.pdf (15 pages, 317717713 bytes).
+me/dinoanasta/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</home/dinoanasta/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></home/dinoanasta/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></home/dinoanasta/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/
+cmtt10.pfb>
+Output written on cartoonify.pdf (23 pages, 332522849 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 86 named destinations out of 1000 (max. 500000)
- 338 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 456 PDF objects out of 1000 (max. 8388607)
+ 100 named destinations out of 1000 (max. 500000)
+ 335 words of extra memory for PDF output out of 10000 (max. 10000000)
 

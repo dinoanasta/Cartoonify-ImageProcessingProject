@@ -1,4 +1,4 @@
-\documentclass[a4paper,twoside,10pt, twocolumn]{report}
+\documentclass[a4paper,10pt]{report}
 % Dino Anastasopoulos, 2021
 
 % Include Packages
@@ -11,6 +11,11 @@
 %\usepackage{subfigure}              % Allow subfigures
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{enumerate}
+
+
+\setlength{\columnsep}{1.5cm}
+
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -70,7 +75,7 @@
 	\begin{center}
 		\vfill
 		{
-			\huge \bf \textsc{Cartoonify: \\Artistic Image Filters Using Several Processing Techniques}\\
+			\huge \bf \textsc{Cartoonify: \\Artistic Effects Using Image Processing Techniques}\\
 			\large School of Computer Science \& Applied Mathematics\\
 			\large University of the Witwatersrand\\[20pt]
 			\normalsize
@@ -80,7 +85,7 @@
 		
 		\vfill
 		\vfill
-		\includegraphics[width=0.5\textwidth]{../Images/Output_Individual/Glitch_Portrait.jpg}
+		\includegraphics[width=0.5\textwidth]{../Images/Output_Individual/Cartoonify_Portrait.jpg}
 
 	\end{center}
 	
@@ -119,24 +124,29 @@
 
 	\twocolumn
 	\chapter{Introduction}
-	The following report will explain the techniques used to achieve various artistic image filters and effects. The file size of this document is extremely large, since the images have all been saved in their original quality, to allow for the results to be seen clearly after zooming in to individual images.
-	
-	Each section will simply show the result for the same image, "Portrait", however, the appendix contains a separate page for each effect applied on many different images across several domains.
-	
-	
+	The following report will explain the techniques used to achieve various artistic image filters and effects. The file size of this document is extremely large, since the images have all been saved in their original quality, to allow for the results to be seen clearly after zooming in to individual images.\\\\
+	Each section will simply show the result for the same image, "Portrait", however, the appendix contains a separate page for each effect applied on many different images across several domains. 
+	Section \ref{MainEffectsChapter}, "Main Effects", contains the main effects of the project, which have been implemented from scratch using Digital Image Processing techniques. The results of these effects can be found in Appendix \ref{MainEffectsAppendix}. \\
+	Section \ref{ExtraEffectsAppendix}, "Extra Effects", contains extra effects which require very little code, use built-in methods which are part of the OpenCV library, or use external libraries. These have been included out of interest, and because the results are cool and aesthetically pleasing. The results of these effects can be found in Appendix \ref{ExtraEffectsAppendix}.
+
+
 	\chapter{Body}
 	
-	\section{Main Effects}
-	This section contains the main effects of the project, which have been implemented from scratch using Digital Image Processing techniques.
+	\section{Main Effects}\label{MainEffectsChapter}
+
 	\subsection{Main Effect \#1 - Cartoonify}
-	\subsubsection{Techniques}
-	Grayscale
-	Gaussian blurring to remove fine details from image since cartoons are simple.
-	Edge detection on blurred gray image.
-	Using k-means clustering to perform colour quantization.
-	Gaussian blurring to remove further details.
-	Combine extracted edges with clustered and blurred colour image.
-	This process can be seen in Figure \ref{Process_Cartoonify}.
+	Cartoons are simplified versions of real images, with defined lines, flat colours and very few fine details like exact hair placement, freckles, etc. Therefore, cartoonifying an image consists of two main parts, firstly edge extraction, and secondly colour quantization.
+	The exact steps of the algorithm are as follows:
+	\begin{enumerate}[Step 1:]
+		\item Read in colour image.
+		\item Convert to grayscale using cv2.cvtColor
+		\item Blur this gray image using cv2.medianBlur. This step is done to remove stochastic variation and finer details so that only the main edges are extracted in the next step. The reason for this is because, as explained above, cartoons are simplified.
+		\item Extract the edges from this blurred gray image using cv2.adaptiveThreshold.
+		\item Perform colour quantization on the original colour image, using K-means clustering with 10 colours (or clusters). This step is done to decrease the number of colours in the final image, since cartoons have far less colours than real images.
+		\item Blur this reduced-colour image using cv2.medianBlur. This step is done to once again remove "noise" and finer details.
+		\item Combine the extracted edges with reduced-colour blurred image to achieve the final cartoon result, using cv2.bitwise\_and.		
+	\end{enumerate}
+	This process can be seen in Figure \ref{Process_Cartoonify}, and the effect can be seen in Figure \ref{ALLCartoonify}.
 	
 	\begin{figure}[h]
 		\caption{Cartoonify Process}
@@ -147,10 +157,7 @@
 	
 	
 	\subsection{Main Effect \#2 - Pencil Sketch}
-	
-	
-	This process can be seen in Figure \ref{Process_Pencil_Sketch}.
-	
+	This process can be seen in Figure \ref{Process_Pencil_Sketch}, and the effect can be seen in Figure \ref{ALLPencilSKetch}.
 	\begin{figure}[h]
 		\caption{Pencil Sketch Process}
 		\centering
@@ -161,8 +168,7 @@
 	
 	
 	\subsection{Main Effect \#3 - Pixelate}
-	This process can be seen in Figure \ref{Process_Pixelate}.
-	
+	This process can be seen in Figure \ref{Process_Pixelate}, , and the effect can be seen in Figure \ref{ALLPixelate}.
 	\begin{figure}[h]
 		\caption{Pixelate Process}
 		\centering
@@ -174,9 +180,18 @@
 	
 	
 	\subsection{Main Effect \#4 - Emboss}
-
-	This process can be seen in Figure \ref{Process_Emboss}.
-	
+	The emboss filter works by replacing each pixel in the image by either a gray, black or white pixel (in our case it will be a colour pixel instead of white, for the sake of more aesthetic results). Regions in the image that are simple and do not have a lot of contrast will be replaced with a gray value. On the other hand, regions in the image which DO have a lot of contrast will either be replaced by a highlight or a shadow, depending on the direction of embossing as defined by our kernel. In Figure \ref{Process_Emboss}, we can see the effect of different kernels on the same image, with an offset of 64 (i.e. All gray values are a darker gray compared to the default 128). \\
+	The kernels used are as follows: 
+	\begin{itemize}
+		\item $[[-2,-1,0],[-1,1,1],[-1,1,2]]$
+		\item $[[-1, 0], [0, 1]]$
+		\item $[[1,0],[0,-1]]$
+		\item $[[0,1],[-1,0]]$
+		\item $[[0,-1],[1,0]]$
+		\item $[[1,0,0],[0,0,0],[0,0,-1]]$
+		\item $[[-1,0,0],[0,0,0],[0,0,1]]$
+	\end{itemize}
+	In the final process, we randomly select this kernel, and an offset of either 64 or 128, to add some variation in the results. This can be seen in Figure \ref{ALLEmboss}.
 	\begin{figure}[h]
 		\caption{Emboss Process}
 		\centering
@@ -185,30 +200,27 @@
 	\end{figure}
 	
 	
-	
-	
-	\section{Extra Effects}
-	This section contains extra effects which require very little code, use built-in methods which are a part of the OpenCV library, or use external libraries. These have been included out of interest, and because the results are aesthetically pleasing.
+	\section{Extra Effects}\label{ExtraEffectsChapter}
 	\subsection{Extra Effect \#1 - ColorMaps}
 	Using cv2.applyColorMap(img, chosenMap)\\
-	These can be seen in Figure \ref{Images_ColourMaps}.
+	These effects can be seen in Figure \ref{Images_ColourMaps}.
 	\subsubsection{Duo Chromatic}
 	Random ColorMap selected from [cv2.COLORMAP\_AUTUMN, cv2.COLORMAP\_WINTER, cv2.COLORMAP\_SUMMER, cv2.COLORMAP\_SPRING]\\
-	As seen in Figure \ref{Duo}.
+	This effect can be seen in Figure \ref{Duo} and Figure \ref{ALLDuo}.
 	\subsubsection{Thermal 1}
-	cv2.COLORMAP\_HSV\\
-	As seen in Figure \ref{Thermal1}.
+	cColourMap used: v2.COLORMAP\_HSV\\
+	This effect can be seen in Figure \ref{Thermal1} and Figure \ref{ALLThermal1}.
 	\subsubsection{Thermal 2}
-	cv2.COLORMAP\_RAINBOW\\
-	As seen in Figure \ref{Thermal2}.
+	ColourMap used: cv2.COLORMAP\_RAINBOW\\
+	This effect can be seen in Figure \ref{Thermal2} and Figure \ref{ALLThermal2}.
 	\subsubsection{Thermal 3}
-	cv2.COLORMAP\_JET\\
-	As seen in Figure \ref{Thermal3}.
+	ColourMap used: cv2.COLORMAP\_JET\\
+	This effect can be seen in Figure \ref{Thermal3} and Figure \ref{ALLThermal3}.
 	\subsubsection{UV}
-	cv2.COLORMAP\_COOL\\
-	As seen in Figure \ref{UV}.
+	ColourMap used: cv2.COLORMAP\_COOL\\
+	This effect can be seen in Figure \ref{UV} and Figure \ref{ALLUV}.
 	
-	\begin{figure}[h]	
+	\begin{figure}[h]
 	\subfloat[Duo]{	\includegraphics[width=.3\linewidth]{../Images/Output_Individual/Duo_Portrait.jpg}\label{Duo}}
 	\subfloat[Thermal 1]{	\includegraphics[width=.3\linewidth]{../Images/Output_Individual/Thermal1_Portrait.jpg}\label{Thermal1}}
 	\subfloat[Thermal 2]{	\includegraphics[width=.3\linewidth]{../Images/Output_Individual/Thermal2_Portrait.jpg}\label{Thermal2}}\\
@@ -223,13 +235,13 @@
 	
 	\subsection{Extra Effect \#2 - WaterColor}
 	Method used: cv2.stylization(img, sigma\_s=100, sigma\_r=0.9)\\
-	As seen in Figure \ref{WaterColor}.
+	This effect can be seen in Figure \ref{WaterColor} and Figure \ref{ALLWaterColor}.
 	\subsection{Extra Effect \#3 - Enhance}
 	Method used: cv2.detailEnhance(img)\\
-	As seen in Figure \ref{Enhance}.
+	This effect can be seen in Figure \ref{Enhance} and Figure \ref{ALLEnhance}.
 	\subsection{Extra Effect \#4 - Glitch}
-	This effect was implemented using a library called glitch\_this, by TotallyNotChase, found at \url{https://github.com/TotallyNotChase/glitch-this}. It is a command-line tool which reads in an image, and applies a glitch effect with a user-provided intensity, and optional scan lines too. I utilized the functionality in Jupyter that allows users to run terminal commands by using "!" before a line of code, and randomly generated the glitch intensity, and also whether or not the scan lines would be applied, in order to get varied results.
-	As seen in Figure \ref{Glitch}.
+	This effect was implemented using a library called glitch\_this, by TotallyNotChase, found at \url{https://github.com/TotallyNotChase/glitch-this}. It is a command-line tool which reads in an image, and applies a glitch effect with a user-provided intensity, and optional scan lines too. I utilized the functionality in Jupyter that allows users to run terminal commands by using "!" before a line of code, and randomly generated the glitch intensity, and also whether or not the scan lines would be applied, in order to get varied results.\\
+	This effect can be seen in Figure \ref{Glitch} and Figure \ref{ALLGlitch}.
 	
 	
 	\begin{figure}[h]	
