@@ -1,0 +1,1 @@
+This text file exists so that all the images in these folders can be ignored, but the actually folder still pushed to the GitHub, since these folders are needed when running the notebook
