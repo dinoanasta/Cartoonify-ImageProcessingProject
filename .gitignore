@@ -1,5 +1,5 @@
 .ipynb_checkpoints/
 Latex/cartoonify.pdf
-Images/Output_All/*
-Images/Output_Individual/*
-Images/Process/*
+Images/Output_All/*.jpg
+Images/Output_Individual/*.jpg
+Images/Process/*.jpg
