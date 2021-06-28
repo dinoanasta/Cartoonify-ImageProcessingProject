@@ -13104,9 +13104,9 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cartoonify-Digital-Image-Processing-Project">Cartoonify Digital Image Processing Project<a class="anchor-link" href="#Cartoonify-Digital-Image-Processing-Project">&#182;</a></h1><p>Dino Anastasopoulos (Student Number: 1900661)
-University of the Witwatersrand
-Course: APPM4058A - Digital Image Processing</p>
+<h1 id="Cartoonify-Digital-Image-Processing-Project">Cartoonify Digital Image Processing Project<a class="anchor-link" href="#Cartoonify-Digital-Image-Processing-Project">&#182;</a></h1><p>Dino Anastasopoulos (Student Number: 1900661)</p>
+<p>University of the Witwatersrand</p>
+<p>Course: APPM4058A - Digital Image Processing</p>
 
 </div>
 </div>
@@ -13120,32 +13120,19 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Genera</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#General</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_html</span><span class="p">,</span><span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
 <span class="c1">#Image Processing and Displaying</span>
 <span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">import</span> <span class="nn">PIL</span>
-
-<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">io</span> 
-
-<span class="kn">import</span> <span class="nn">scipy</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-<span class="kn">import</span> <span class="nn">scipy.spatial</span>
-
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">mtpltcmCourse</span> 
-
 <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
 
 <span class="c1">#Glitch Filter</span>
@@ -13187,7 +13174,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ApplyEffect</span><span class="p">(</span><span class="n">effect</span><span class="p">):</span>
@@ -13197,7 +13184,7 @@ Course: APPM4058A - Digital Image Processing</p>
     
     <span class="c1"># Set input and output folder</span>
     <span class="n">input_folder_path</span> <span class="o">=</span> <span class="s2">&quot;Images/Input/&quot;</span>
-    <span class="n">output_folder_path</span> <span class="o">=</span> <span class="s2">&quot;Images/Output/&quot;</span>
+    <span class="n">output_folder_path</span> <span class="o">=</span> <span class="s2">&quot;Images/Output_Individual/&quot;</span>
     
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
@@ -13213,7 +13200,7 @@ Course: APPM4058A - Digital Image Processing</p>
         <span class="n">output</span> <span class="o">=</span> <span class="n">effect</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">input_path</span><span class="p">))</span>
 
         <span class="n">fullpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder_path</span><span class="p">,</span> <span class="n">effect_name</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">image_path</span><span class="p">)</span>
-<span class="c1">#         cv2.imwrite(fullpath, output) # Save each image with effect</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">fullpath</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="c1"># Save each image with effect</span>
 
         <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
@@ -13221,8 +13208,9 @@ Course: APPM4058A - Digital Image Processing</p>
         <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
         
         <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+        
     <span class="c1"># Save figure of all images with effect</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;Images/Output/ALL_&quot;</span> <span class="o">+</span> <span class="n">effect_name</span> <span class="o">+</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span><span class="n">pad_inches</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>    
+    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;Images/Output_All/ALL_&quot;</span> <span class="o">+</span> <span class="n">effect_name</span> <span class="o">+</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span><span class="n">pad_inches</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>    
 </pre></div>
 
     </div>
@@ -13254,26 +13242,28 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gray_kernel_size</span> <span class="o">=</span> <span class="mi">11</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Global Variables</span>
+<span class="n">gray_kernel_size</span> <span class="o">=</span> <span class="mi">11</span>
 <span class="n">color_kernel_size</span> <span class="o">=</span> <span class="mi">11</span>
 <span class="n">numColors</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="k">def</span> <span class="nf">color_quantization</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">Quantize_Colors</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="c1"># Reshape image for clustering</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
     
-    <span class="c1"># Defining criteria</span>
+    <span class="c1"># Define K-means clustering criteria</span>
     <span class="n">criteria</span> <span class="o">=</span> <span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">TERM_CRITERIA_EPS</span> <span class="o">+</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TERM_CRITERIA_MAX_ITER</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
     
-    <span class="c1"># K means</span>
+    <span class="c1"># K-means clustering</span>
     <span class="n">ret</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">center</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">kmeans</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">criteria</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">KMEANS_RANDOM_CENTERS</span><span class="p">)</span>
     <span class="n">center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="n">label</span><span class="o">.</span><span class="n">flatten</span><span class="p">()]</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
+    <span class="n">quanitized</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="n">label</span><span class="o">.</span><span class="n">flatten</span><span class="p">()]</span>
+    <span class="n">quanitized</span> <span class="o">=</span> <span class="n">quanitized</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">quanitized</span>
 </pre></div>
 
     </div>
@@ -13290,23 +13280,43 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;Images/Input/Portrait.jpg&quot;</span><span class="p">)</span> <span class="c1"># Read picture</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Read picture</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;Images/Input/Portrait.jpg&quot;</span><span class="p">)</span> 
 
+<span class="c1">#Convert to grayscale</span>
 <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+<span class="c1">#Blur gray image</span>
 <span class="n">gray_blurred</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">gray_kernel_size</span><span class="p">)</span>
 
+<span class="c1">#Extract edges from gray image</span>
 <span class="n">edges</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">adaptiveThreshold</span><span class="p">(</span><span class="n">gray_blurred</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ADAPTIVE_THRESH_MEAN_C</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="n">clustered</span> <span class="o">=</span> <span class="n">color_quantization</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">numColors</span><span class="p">)</span>
+<span class="c1">#Perform Color Quantization to decrease number of colors in image</span>
+<span class="n">clustered</span> <span class="o">=</span> <span class="n">Quantize_Colors</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">numColors</span><span class="p">)</span>
+
+<span class="c1">#Blur this reduced-colour image to remove &quot;noise&quot; and finer details</span>
 <span class="n">clustered_blurred</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">clustered</span><span class="p">,</span> <span class="n">color_kernel_size</span><span class="p">)</span>
 
+<span class="c1">#Combine edges and blurred reduced-colour images for final cartoon</span>
 <span class="n">cartoon</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">clustered_blurred</span><span class="p">,</span> <span class="n">clustered_blurred</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">edges</span><span class="p">)</span>
-     
-<span class="c1"># Display process</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display Process</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -13363,7 +13373,7 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_10_0.png"
+<img src="Cartoonify_files/Cartoonify_11_0.png"
 >
 </div>
 
@@ -13382,16 +13392,16 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Cartoonify</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
     <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
     
     <span class="n">gray_blurred</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">gray_kernel_size</span><span class="p">)</span>
-    <span class="n">edges</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">adaptiveThreshold</span><span class="p">(</span><span class="n">gray_blurred</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ADAPTIVE_THRESH_MEAN_C</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">adaptiveThreshold</span><span class="p">(</span><span class="n">gray_blurredimg</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ADAPTIVE_THRESH_MEAN_C</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
     
-    <span class="n">clustered</span> <span class="o">=</span> <span class="n">color_quantization</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">numColors</span><span class="p">)</span>
+    <span class="n">clustered</span> <span class="o">=</span> <span class="n">Quantize_Colors</span><span class="p">(,</span> <span class="n">numColors</span><span class="p">)</span>
     <span class="n">clustered_blurred</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">clustered</span><span class="p">,</span> <span class="n">color_kernel_size</span><span class="p">)</span>
     
     <span class="n">cartoon</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">clustered_blurred</span><span class="p">,</span> <span class="n">clustered_blurred</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">edges</span><span class="p">)</span>
@@ -13406,7 +13416,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Cartoonify&quot;</span><span class="p">))</span>
@@ -13441,7 +13451,7 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_13_1.png"
+<img src="Cartoonify_files/Cartoonify_14_1.png"
 >
 </div>
 
@@ -13467,10 +13477,10 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kernel_size</span> <span class="o">=</span> <span class="mi">27</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kernel_size</span> <span class="o">=</span> <span class="mi">15</span>
 </pre></div>
 
     </div>
@@ -13487,7 +13497,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;Images/Input/Portrait.jpg&quot;</span><span class="p">)</span> <span class="c1"># Read picture</span>
@@ -13499,10 +13509,7 @@ Course: APPM4058A - Digital Image Processing</p>
 <span class="n">inverted</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_not</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
 
 <span class="c1">#Blur the inverted image</span>
-<span class="c1"># blurred = cv2.GaussianBlur(inverted, (21, 21), sigmaX=0, sigmaY=0)</span>
-
 <span class="n">blurred</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">inverted</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">)</span>
-
 
 <span class="c1">#Colour dodge - divide original grayscale image by inverted layer</span>
 <span class="n">dodge</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="mi">255</span><span class="o">-</span><span class="n">blurred</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
@@ -13511,7 +13518,7 @@ Course: APPM4058A - Digital Image Processing</p>
 <span class="n">burn</span> <span class="o">=</span> <span class="mi">255</span> <span class="o">-</span> <span class="n">cv2</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="mi">255</span><span class="o">-</span><span class="n">dodge</span><span class="p">,</span> <span class="mi">255</span><span class="o">-</span><span class="n">blurred</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
         
 <span class="c1"># Display process</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -13564,7 +13571,7 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_18_0.png"
+<img src="Cartoonify_files/Cartoonify_19_0.png"
 >
 </div>
 
@@ -13583,7 +13590,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Pencil_Sketch</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
@@ -13595,7 +13602,6 @@ Course: APPM4058A - Digital Image Processing</p>
     <span class="n">inverted</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_not</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
     
     <span class="c1">#Blur the inverted image</span>
-<span class="c1">#     blurred = cv2.GaussianBlur(inverted, (21, 21), sigmaX=0, sigmaY=0)</span>
     <span class="n">blurred</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">inverted</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">)</span>
 
     <span class="c1">#Colour dodge - divide original grayscale image by inverted layer</span>
@@ -13616,7 +13622,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Pencil Sketch&quot;</span><span class="p">))</span>
@@ -13651,7 +13657,7 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_21_1.png"
+<img src="Cartoonify_files/Cartoonify_22_1.png"
 >
 </div>
 
@@ -13677,10 +13683,11 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numPixels</span> <span class="o">=</span> <span class="mi">25</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numPixels</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">numCols</span> <span class="o">=</span> <span class="mi">30</span>
 </pre></div>
 
     </div>
@@ -13697,7 +13704,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;Images/Input/Portrait.jpg&quot;</span><span class="p">)</span> <span class="c1"># Read picture</span>
@@ -13713,38 +13720,69 @@ Course: APPM4058A - Digital Image Processing</p>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">pixW</span> <span class="o">=</span> <span class="n">numPixels</span>
     <span class="n">pixH</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pixW</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="n">aspect_ratio</span><span class="p">)</span>
+    
 
 <span class="c1"># Desired &quot;pixelated&quot; size</span>
 <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixW</span><span class="p">,</span> <span class="n">pixH</span><span class="p">)</span>
 
-<span class="c1"># Resize input to &quot;pixelated&quot; size</span>
-<span class="n">temp</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">)</span>
+<span class="c1"># Linear input to &quot;pixelated&quot; size</span>
+<span class="n">linear_inter</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">)</span>
 
-<span class="c1"># Initialize output image</span>
-<span class="n">pixelated</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_NEAREST</span><span class="p">)</span>  
-    
-<span class="n">clustered</span> <span class="o">=</span> <span class="n">color_quantization</span><span class="p">(</span><span class="n">pixelated</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="c1"># Nearest-neighbour Interpolation</span>
+<span class="n">nearest_inter</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_NEAREST</span><span class="p">)</span>  
 
-<span class="c1"># Display process</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="c1"># Cubic Interpolation</span>
+<span class="n">cubic_inter</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_CUBIC</span><span class="p">)</span>  
+
+<span class="c1"># Area Interpolation</span>
+<span class="n">area_inter</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_AREA</span><span class="p">)</span>  
+
+<span class="c1"># Cubic Interpolation</span>
+<span class="n">lanczo_inter</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LANCZOS4</span><span class="p">)</span>  
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display process</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Original&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Pixelated&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Linear Interpolation&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">pixelated</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">linear_inter</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Pixelated and Clustered&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cubic Interpolation&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">clustered</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">cubic_inter</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
 
-<span class="c1"># plt.show(block=True)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Area Interpolation&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">max_inter</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Lanczo Interpolation&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">lanczo_inter</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+
+
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Images/Process/Effect3_Pixelate.jpg&#39;</span><span class="p">,</span>  <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span><span class="n">pad_inches</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 
@@ -13764,7 +13802,7 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_26_0.png"
+<img src="Cartoonify_files/Cartoonify_28_0.png"
 >
 </div>
 
@@ -13783,7 +13821,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Pixelate</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
@@ -13802,12 +13840,9 @@ Course: APPM4058A - Digital Image Processing</p>
     <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixW</span><span class="p">,</span> <span class="n">pixH</span><span class="p">)</span>
 
     <span class="c1"># Resize input to &quot;pixelated&quot; size</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">)</span>
+    <span class="n">pixelated</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">)</span>
 
-    <span class="c1"># Initialize output image</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_NEAREST</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="n">pixelated</span>
 </pre></div>
 
     </div>
@@ -13817,7 +13852,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Pixelate&quot;</span><span class="p">))</span>
@@ -13852,7 +13887,7 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_29_1.png"
+<img src="Cartoonify_files/Cartoonify_31_1.png"
 >
 </div>
 
@@ -13878,7 +13913,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">offset</span> <span class="o">=</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">]</span>
@@ -13906,35 +13941,101 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;Images/Input/Portrait.jpg&quot;</span><span class="p">)</span> <span class="c1"># Read picture</span>
 
-<span class="c1">#Choose kernel randomly for variation</span>
-<span class="n">kernel</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">kernels</span><span class="p">)</span>
+<span class="c1"># #Choose kernel randomly for variation</span>
+<span class="c1"># kernel = random.choice(kernels)</span>
 
-<span class="c1">#Choose gray value randomly for variation</span>
-<span class="n">gray_value</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span>
+<span class="c1"># #Choose gray value randomly for variation</span>
+<span class="c1"># gray_value = random.choice(offset)</span>
 
 <span class="c1">#Covolve image with kernel</span>
-<span class="n">embossed</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">gray_value</span><span class="p">)</span>
-    
-<span class="c1"># Display process</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">embossed1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">embossed2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">embossed3</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernels</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">embossed4</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernels</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">embossed5</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernels</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">embossed6</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernels</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">embossed7</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernels</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display Process</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Original&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Embossed&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Embossed kernel 1&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">embossed</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">embossed1</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
 
-<span class="c1"># plt.show(block=True)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Embossed kernel 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">embossed2</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Embossed kernel 3&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">embossed3</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Embossed kernel 4&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">embossed4</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Embossed kernel 5&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">embossed5</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Embossed kernel 6&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">embossed6</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Embossed kernel 7&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">embossed7</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Images/Process/Effect4_Emboss.jpg&#39;</span><span class="p">,</span>  <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span><span class="n">pad_inches</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 
@@ -13954,7 +14055,7 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_34_0.png"
+<img src="Cartoonify_files/Cartoonify_37_0.png"
 >
 </div>
 
@@ -13973,7 +14074,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Emboss</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
@@ -13987,7 +14088,19 @@ Course: APPM4058A - Digital Image Processing</p>
     <span class="n">embossed</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">gray_value</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">embossed</span>
+</pre></div>
 
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Emboss&quot;</span><span class="p">))</span>
 <span class="n">ApplyEffect</span><span class="p">(</span><span class="n">Emboss</span><span class="p">)</span>
 </pre></div>
 
@@ -14005,9 +14118,21 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Emboss">Emboss<a class="anchor-link" href="#Emboss">&#182;</a></h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_36_0.png"
+<img src="Cartoonify_files/Cartoonify_40_1.png"
 >
 </div>
 
@@ -14041,7 +14166,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Duo</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
@@ -14050,6 +14175,7 @@ Course: APPM4058A - Digital Image Processing</p>
     <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">applyColorMap</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">chosenMap</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span>
 
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Duo Chromatic&quot;</span><span class="p">))</span>
 <span class="n">ApplyEffect</span><span class="p">(</span><span class="n">Duo</span><span class="p">)</span>
 </pre></div>
 
@@ -14067,9 +14193,21 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Duo-Chromatic">Duo Chromatic<a class="anchor-link" href="#Duo-Chromatic">&#182;</a></h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_40_0.png"
+<img src="Cartoonify_files/Cartoonify_44_1.png"
 >
 </div>
 
@@ -14088,13 +14226,14 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Thermal1</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">applyColorMap</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLORMAP_HSV</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span>
 
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Thermal 1&quot;</span><span class="p">))</span>
 <span class="n">ApplyEffect</span><span class="p">(</span><span class="n">Thermal1</span><span class="p">)</span>
 </pre></div>
 
@@ -14112,9 +14251,21 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Thermal-1">Thermal 1<a class="anchor-link" href="#Thermal-1">&#182;</a></h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_42_0.png"
+<img src="Cartoonify_files/Cartoonify_46_1.png"
 >
 </div>
 
@@ -14133,13 +14284,15 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Thermal2</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">applyColorMap</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLORMAP_RAINBOW</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span>
 
+
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Thermal 2&quot;</span><span class="p">))</span>
 <span class="n">ApplyEffect</span><span class="p">(</span><span class="n">Thermal2</span><span class="p">)</span>
 </pre></div>
 
@@ -14157,9 +14310,21 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Thermal-2">Thermal 2<a class="anchor-link" href="#Thermal-2">&#182;</a></h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_44_0.png"
+<img src="Cartoonify_files/Cartoonify_48_1.png"
 >
 </div>
 
@@ -14178,13 +14343,14 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Thermal3</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">applyColorMap</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLORMAP_JET</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span>
 
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Thermal 3&quot;</span><span class="p">))</span>
 <span class="n">ApplyEffect</span><span class="p">(</span><span class="n">Thermal3</span><span class="p">)</span>
 </pre></div>
 
@@ -14202,9 +14368,21 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Thermal-3">Thermal 3<a class="anchor-link" href="#Thermal-3">&#182;</a></h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_46_0.png"
+<img src="Cartoonify_files/Cartoonify_50_1.png"
 >
 </div>
 
@@ -14223,13 +14401,15 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">UV</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">applyColorMap</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLORMAP_COOL</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span>
 
+
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## UV&quot;</span><span class="p">))</span>
 <span class="n">ApplyEffect</span><span class="p">(</span><span class="n">UV</span><span class="p">)</span>
 </pre></div>
 
@@ -14247,9 +14427,21 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="UV">UV<a class="anchor-link" href="#UV">&#182;</a></h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_48_0.png"
+<img src="Cartoonify_files/Cartoonify_52_1.png"
 >
 </div>
 
@@ -14268,13 +14460,14 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">WaterColour</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">stylization</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">sigma_s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">sigma_r</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span>
 
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## WaterColor&quot;</span><span class="p">))</span>
 <span class="n">ApplyEffect</span><span class="p">(</span><span class="n">WaterColour</span><span class="p">)</span>
 </pre></div>
 
@@ -14292,9 +14485,21 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="WaterColor">WaterColor<a class="anchor-link" href="#WaterColor">&#182;</a></h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_50_0.png"
+<img src="Cartoonify_files/Cartoonify_54_1.png"
 >
 </div>
 
@@ -14313,13 +14518,14 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Enhance</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">detailEnhance</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span>
 
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Enhance&quot;</span><span class="p">))</span>
 <span class="n">ApplyEffect</span><span class="p">(</span><span class="n">Enhance</span><span class="p">)</span>
 </pre></div>
 
@@ -14337,9 +14543,21 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Enhance">Enhance<a class="anchor-link" href="#Enhance">&#182;</a></h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_52_0.png"
+<img src="Cartoonify_files/Cartoonify_56_1.png"
 >
 </div>
 
@@ -14359,7 +14577,7 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%capture</span>
@@ -14367,7 +14585,7 @@ Course: APPM4058A - Digital Image Processing</p>
         
     <span class="c1">#Set input and output folder</span>
     <span class="n">input_folder_path</span> <span class="o">=</span> <span class="s2">&quot;Images/Input/&quot;</span>
-    <span class="n">output_folder_path</span> <span class="o">=</span> <span class="s2">&quot;Images/Output/&quot;</span>
+    <span class="n">output_folder_path</span> <span class="o">=</span> <span class="s2">&quot;Images/Output_Individual/&quot;</span>
 
     <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
     
@@ -14400,7 +14618,7 @@ Course: APPM4058A - Digital Image Processing</p>
         <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>      
         <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
         
-    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;Images/Output/ALL_Glitch.jpg&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span><span class="n">pad_inches</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>  <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>        
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;Images/Output_All/ALL_Glitch.jpg&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span><span class="n">pad_inches</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>  <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>        
 <span class="n">Glitch</span><span class="p">()</span>
 </pre></div>
 
@@ -14411,12 +14629,13 @@ Course: APPM4058A - Digital Image Processing</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ALL_Glitch</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;Images/Output/ALL_Glitch.jpg&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ALL_Glitch</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;Images/Output_All/ALL_Glitch.jpg&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;## Glitch&quot;</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ALL_Glitch</span><span class="p">)</span>
 </pre></div>
 
@@ -14430,13 +14649,25 @@ Course: APPM4058A - Digital Image Processing</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[24]:</div>
+    <div class="prompt"></div>
+
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Glitch">Glitch<a class="anchor-link" href="#Glitch">&#182;</a></h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x7fd9f1f89c70&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x7ff63ad28700&gt;</pre>
 </div>
 
 </div>
@@ -14449,7 +14680,7 @@ Course: APPM4058A - Digital Image Processing</p>
 
 
 <div class="output_png output_subarea ">
-<img src="Cartoonify_files/Cartoonify_55_1.png"
+<img src="Cartoonify_files/Cartoonify_59_2.png"
 >
 </div>
 
